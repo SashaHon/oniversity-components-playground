@@ -29,10 +29,10 @@ const cardData = [
       Scroll down to check the component for better preview or go
     </p>
     <RouterLink to="/" class="main-styles__link-back">&lt;&lt; Back 🪂</RouterLink>
-    <div class="cards-container">
+    <div class="cards">
       <!-- let's imagine here is some header and h1 -->
-      <section class="info">
-        <ul class="list">
+      <section class="cards__container">
+        <ul class="cards__list">
           <CardComponent
             v-for="(card, index) in cardData"
             :key="card + index"
@@ -54,7 +54,7 @@ $transparent-white: hsla(0, 0%, 100%, 0.75);
 
 .main-container {
   width: 100%;
-  .info {
+  .cards__container {
     height: auto;
     min-height: 100vh;
     padding: 10%;
@@ -65,7 +65,7 @@ $transparent-white: hsla(0, 0%, 100%, 0.75);
     font-size: $font-size-normal;
     font-family: $font-regular;
     color: $transparent-white;
-    .list {
+    .cards__list {
       display: flex;
       height: 100%;
     }
@@ -73,19 +73,19 @@ $transparent-white: hsla(0, 0%, 100%, 0.75);
 }
 
 @media (width <= 70rem) {
-  .cards-container {
+  // margin-top: 2rem;
+  .cards__container {
     margin-top: 2rem;
-    .list {
+    .cards__list {
       flex-direction: column;
       width: 100%;
-      // overflow: hidden;
     }
   }
 }
 
 @media (width <= 40rem) {
   .main-container {
-    .info {
+    .cards__container {
       padding: 0;
     }
   }
