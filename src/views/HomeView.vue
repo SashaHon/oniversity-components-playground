@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <div class="home-container">
     <img src="../assets/img/study.jpg" alt="Person doing e-magic lineart" />

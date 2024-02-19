@@ -1,7 +1,7 @@
 <script setup>
 import { RouterView } from 'vue-router'
 
-import MyHeading from './components/MyHeading.vue'
+import MyHeading from './components/general/MyHeading.vue'
 </script>
 
 <template>
