@@ -5,10 +5,10 @@ const imgSrc = 'src/assets/img/three-card-component/icon--' + props.title + '.sv
 </script>
 
 <template>
-  <li :class="'bg--' + props.bgColor">
+  <li :class="'bg--' + props.bgColor" class="card">
     <img :src="imgSrc" :alt="props.title + ' icon'" />
 
-    <h2>{{ props.title }}</h2>
+    <h2 class="card__title">{{ props.title }}</h2>
     <p>
       {{ props.description }}
     </p>
@@ -30,22 +30,28 @@ $font-size-normal: 15px;
 $font-regular: 'Lexend Deca';
 $font-title: 'Big Shoulders Display';
 
-.view-container {
-  min-height: 100vh;
-  padding: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.card {
+  padding: 4rem;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 2em;
+  min-width: 24rem;
+  &:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
 
-  font-size: $font-size-normal;
-  font-family: $font-regular;
-  color: $transparent-white;
+  &:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
 
-  h2 {
+  &__title {
     font-family: $font-title;
     font-size: 2.8rem;
     text-transform: uppercase;
   }
+
   button {
     background-color: $transparent-white;
     bottom: 4rem;
@@ -55,6 +61,7 @@ $font-title: 'Big Shoulders Display';
     font-family: $font-regular;
     padding: 1em 2em;
     width: fit-content;
+    white-space: pre;
     &:hover {
       cursor: pointer;
     }
@@ -65,75 +72,48 @@ $font-title: 'Big Shoulders Display';
       color: $transparent-white;
     }
   }
-  .info {
-    height: auto;
-    ul {
-      display: flex;
-      height: 100%;
-      li {
-        padding: 4rem;
-        display: grid;
-        grid-template-rows: auto auto 1fr auto;
-        gap: 2em;
-        min-width: 24rem;
-        &:first-child {
-          border-top-left-radius: 10px;
-          border-bottom-left-radius: 10px;
-        }
+}
 
-        &:last-child {
-          border-top-right-radius: 10px;
-          border-bottom-right-radius: 10px;
-        }
-      }
-    }
+.bg {
+  &--bright-orange {
+    background-color: $bright-orange;
+  }
+  &--dark-cyan {
+    background-color: $dark-cyan;
+  }
+  &--very-dark-cyan {
+    background-color: $very-dark-cyan;
+  }
+}
+
+.c {
+  &--bright-orange {
+    color: $bright-orange;
+  }
+  &--dark-cyan {
+    color: $dark-cyan;
   }
 
-  .bg {
-    &--bright-orange {
-      background-color: $bright-orange;
-    }
-    &--dark-cyan {
-      background-color: $dark-cyan;
-    }
-    &--very-dark-cyan {
-      background-color: $very-dark-cyan;
-    }
-  }
-
-  .c {
-    &--bright-orange {
-      color: $bright-orange;
-    }
-    &--dark-cyan {
-      color: $dark-cyan;
-    }
-
-    &--very-dark-cyan {
-      color: $very-dark-cyan;
-    }
+  &--very-dark-cyan {
+    color: $very-dark-cyan;
   }
 }
 
 /* for smartphone & tablet screens */
 @media (width <= 70rem) {
-  .view-container {
-    .info {
-      ul {
-        flex-direction: column;
-        li {
-          &:first-child {
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            border-bottom-left-radius: 0;
-          }
-          &:last-child {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 10px;
-            border-bottom-left-radius: 10px;
-          }
-        }
-      }
+  .card {
+    min-width: fit-content;
+    padding: 3rem;
+
+    &:first-child {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 0;
+    }
+    &:last-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
     }
   }
 
@@ -143,14 +123,21 @@ $font-title: 'Big Shoulders Display';
 }
 
 @media (width <= 40rem) {
-  h2 {
-    font-size: 2rem;
+  .card {
+    padding: 2rem;
+    &__title {
+      font-size: 2rem;
+    }
   }
 }
 
-@media (width < 23rem) {
-  main {
-    padding: 0.4rem;
+@media (width <= 40rem) {
+  .card {
+    min-width: fit-content;
+
+    &__title {
+      font-size: 2rem;
+    }
   }
 }
 </style>

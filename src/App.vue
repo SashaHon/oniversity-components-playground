@@ -15,4 +15,10 @@ import MyHeading from './components/general/MyHeading.vue'
 main {
   padding: 2rem;
 }
+
+@media (width < 23rem) {
+  main {
+    padding: 0;
+  }
+}
 </style>

@@ -23,8 +23,4 @@
   flex-direction: column;
   align-items: center;
 }
-
-h2 {
-  margin-top: 2rem;
-}
 </style>

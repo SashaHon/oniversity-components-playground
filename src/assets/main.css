@@ -16,12 +16,12 @@ a:visited {
   color: rgb(37, 113, 145);
 }
 
-.description-text {
+.main-styles__description-text {
   margin-top: 2em;
   text-align: center;
 }
 
-.link-back {
+.main-styles__link-back {
   display: block;
   text-align: center;
 }
