@@ -8,10 +8,11 @@ import { RouterLink } from 'vue-router'
       <RouterLink :to="{ name: '3Cards' }">3 card component</RouterLink>
       <RouterLink :to="{ name: 'design3Cards' }">---design</RouterLink>
     </div>
+    <div class="d-flex-around">
+      <RouterLink :to="{ name: 'orderSummary' }">Order summary component</RouterLink>
+      <RouterLink :to="{ name: 'designOrderSummary' }">---design</RouterLink>
+    </div>
 
-    <RouterLink :to="{ name: 'orderSummary' }" class="test"
-      >Order summary component [under construction 🚧]</RouterLink
-    >
     <RouterLink :to="{ name: 'emptyPage' }">Task 3..5 [under construction 🚧]</RouterLink>
   </nav>
 </template>

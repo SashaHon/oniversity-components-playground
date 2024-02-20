@@ -1,12 +1,16 @@
-<script setup>
-import EmptyPageView from './EmptyPageView.vue'
-</script>
+<script setup></script>
 
 <template>
-  <div>
-    <!-- <RouterLink to="/" class="link-back">&lt;&lt; Back 🪂</RouterLink> -->
-    <EmptyPageView />
+  <div class="main-container">
+    <p class="main-styles__description-text">
+      Scroll down to check the component for better preview or go
+    </p>
+    <RouterLink :to="{ name: 'home' }" class="link-back">&lt;&lt; Back 🪂</RouterLink>
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.main-container {
+  width: 100%;
+}
+</style>

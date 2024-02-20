@@ -28,7 +28,7 @@ const cardData = [
     <p class="main-styles__description-text">
       Scroll down to check the component for better preview or go
     </p>
-    <RouterLink to="/" class="main-styles__link-back">&lt;&lt; Back 🪂</RouterLink>
+    <RouterLink :to="{ name: 'home' }" class="main-styles__link-back">&lt;&lt; Back 🪂</RouterLink>
     <div class="cards">
       <!-- let's imagine here is some header and h1 -->
       <section class="cards__container">
