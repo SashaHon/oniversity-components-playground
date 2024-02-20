@@ -6,7 +6,7 @@ import { RouterLink } from 'vue-router'
   <div class="empty-container">
     <div class="empty-text">
       <p>No, srsly, I don't exist yet! > . &lt;</p>
-      <p>Please go <RouterLink to="/"> &lt;&lt; back </RouterLink></p>
+      <p>Please go <RouterLink :to="{ name: 'home' }"> &lt;&lt; back </RouterLink></p>
     </div>
   </div>
 </template>
