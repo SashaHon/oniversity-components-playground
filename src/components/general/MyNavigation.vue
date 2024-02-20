@@ -5,14 +5,14 @@ import { RouterLink } from 'vue-router'
 <template>
   <nav>
     <div class="d-flex-around">
-      <RouterLink to="/3-card-component">3 card component</RouterLink>
-      <RouterLink to="/design-3-card-component">---design</RouterLink>
+      <RouterLink :to="{ name: '3Cards' }">3 card component</RouterLink>
+      <RouterLink :to="{ name: 'design3Cards' }">---design</RouterLink>
     </div>
 
-    <RouterLink to="/order-summary-component" class="test"
+    <RouterLink :to="{ name: 'orderSummary' }" class="test"
       >Order summary component [under construction 🚧]</RouterLink
     >
-    <RouterLink to="/empty-page">Task 3..5 [under construction 🚧]</RouterLink>
+    <RouterLink :to="{ name: 'emptyPage' }">Task 3..5 [under construction 🚧]</RouterLink>
   </nav>
 </template>
 

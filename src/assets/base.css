@@ -1,12 +1,6 @@
-:-webkit-any-link:active {
+any-link:active {
   color: rgb(202, 107, 214);
 }
-/* 
-:-moz-any-link {
-}
-
-:any-link {
-} */
 
 *,
 *::before,

@@ -5,7 +5,7 @@ import MyNavigation from './MyNavigation.vue'
 
 <template>
   <header>
-    <RouterLink to="/" class="title-home-link">
+    <RouterLink :to="{ name: 'home' }" class="title-home-link">
       <h1>˙✧˖°👾༘ ⋆｡˚ Oniversity Components Playground ˙⋆｡🪐✧˖˚</h1>
     </RouterLink>
     <MyNavigation />

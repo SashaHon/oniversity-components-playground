@@ -9,29 +9,29 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/hello',
       name: 'home',
       component: HomeView
     },
     {
       path: '/3-card-component',
-      name: '3-card-component',
+      name: '3Cards',
 
       component: ThreeCardComponentView
     },
     {
       path: '/order-summary-component',
-      name: 'order-summary-component',
+      name: 'orderSummary',
       component: OrderSummaryComponentView
     },
     {
       path: '/empty-page',
-      name: 'empty-page',
+      name: 'emptyPage',
       component: EmptyPageView
     },
     {
       path: '/design-3-card-component',
-      name: 'design-3-card-component',
+      name: 'design3Cards',
       component: DesignThreeCardComponentView
     }
   ]

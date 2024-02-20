@@ -35,7 +35,7 @@ const cardData = [
         <ul class="cards__list">
           <CardComponent
             v-for="(card, index) in cardData"
-            :key="card + index"
+            :key="card.title + index"
             :title="card.title"
             :bgColor="card.bgColor"
             :description="card.description"
