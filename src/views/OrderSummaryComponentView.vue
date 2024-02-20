@@ -6,6 +6,32 @@
       Scroll down to check the component for better preview or go
     </p>
     <RouterLink :to="{ name: 'home' }" class="link-back">&lt;&lt; Back 🪂</RouterLink>
+    <div>
+      <article class="summary">
+        <img
+          src="./images/illustration-hero.svg"
+          alt="Person enjoying music"
+          class="summary__illustration"
+        />
+        <div class="summary__content">
+          <h1 class="summary__title">Order Summary</h1>
+          <p class="summary__description">
+            You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere
+            you like!
+          </p>
+          <div class="plan-content">
+            <img src="/images/icon-music.svg" alt="music icon" class="plan-content__icon" />
+            <div class="plan-content__container">
+              <h2 class="plan-content__title">Annual Plan</h2>
+              <p class="plan-content__price">$59.99/year</p>
+            </div>
+            <a href="#" class="plan-content__link">Change</a>
+          </div>
+          <button class="summary__btn summary__btn--proceed">Proceed to Payment</button>
+          <button class="summary__btn summary__btn--cancel">Cancel Order</button>
+        </div>
+      </article>
+    </div>
   </div>
 </template>
 
