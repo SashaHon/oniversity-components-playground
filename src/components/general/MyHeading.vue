@@ -28,19 +28,19 @@ header {
 
 @media (width <= 70rem) {
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 
 @media (width <= 40rem) {
   h1 {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 }
 
 @media (width <= 23rem) {
   h1 {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
   }
 }
 </style>

@@ -73,190 +73,240 @@ $font-w-extrabold: 900;
   justify-content: center;
   align-items: center;
 
+  color: $desaturated-blue;
+  font-size: $font-size-normal;
+  font-family: $font-name;
+
   background-image: url('/images/pattern-background-desktop.svg');
   background-repeat: no-repeat;
   background-color: $pale-blue;
   background-size: 100%;
-}
 
-.summary {
-  text-align: center;
-  width: 30vw;
-  background-color: #ffff;
-  border-radius: 1rem;
-  box-shadow: 0 1rem 1rem $pale-blue-shadow;
+  .summary {
+    text-align: center;
+    width: 30vw;
+    background-color: #ffff;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 1rem $pale-blue-shadow;
 
-  &__illustration {
-    width: 100%;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-  }
-
-  &__content {
-    padding: 2rem;
-  }
-
-  &__title {
-    color: $dark-blue;
-    font-size: 1.4rem;
-    font-weight: $font-w-bold;
-    white-space: pre;
-  }
-
-  &__description {
-    padding: 1rem;
-  }
-
-  .plan-content {
-    display: flex;
-    background-color: $very-pale-blue;
-    padding: 1rem;
-    border-radius: 0.4rem;
-
-    text-align: start;
-
-    &__icon {
-      align-self: center;
-      height: max-content;
+    &__illustration {
+      width: 100%;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
     }
 
-    &__container {
-      flex-basis: 100%;
-      line-height: 1.5rem;
-      margin-left: 2rem;
+    &__content {
+      padding: 2rem;
     }
 
     &__title {
       color: $dark-blue;
-    }
-
-    &__title,
-    &__price {
+      font-size: 1.4rem;
+      font-weight: $font-w-bold;
       white-space: pre;
     }
 
-    &__link {
-      align-self: center;
-      color: $bright-blue;
+    &__description {
+      padding: 1rem;
+    }
+
+    .plan-content {
+      display: flex;
+      background-color: $very-pale-blue;
+      padding: 1rem;
+      border-radius: 0.4rem;
+
+      text-align: start;
+
+      &__icon {
+        align-self: center;
+        height: max-content;
+      }
+
+      &__container {
+        flex-basis: 100%;
+        line-height: 1.5rem;
+        margin-left: 2rem;
+      }
+
+      &__title {
+        color: $dark-blue;
+        font-size: $font-size-normal;
+        font-weight: $font-w-bold;
+      }
+
+      &__title,
+      &__price {
+        white-space: pre;
+      }
+
+      &__link {
+        align-self: center;
+        color: $bright-blue;
+        font-size: $font-size-small;
+        font-weight: $font-w-bold;
+        text-decoration: underline;
+        &:hover {
+          color: $very-light-blue;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &__btn {
+      display: block;
       font-size: $font-size-small;
       font-weight: $font-w-bold;
-      &:hover {
-        color: $very-light-blue;
-        text-decoration: none;
-      }
-    }
-  }
-
-  &__btn {
-    display: block;
-    font-size: $font-size-small;
-    font-weight: $font-w-bold;
-    margin-top: 1rem;
-    width: 100%;
-    &:hover {
-      cursor: pointer;
-    }
-    &--proceed {
-      background-color: $bright-blue;
-      border: none;
-      border-radius: 0.4rem;
-      padding: 0.5rem;
-      color: $pale-blue;
+      margin-top: 1rem;
       width: 100%;
-      box-shadow: 0 0.5rem 2rem #b4aef1;
-
       &:hover {
-        background-color: $light-blue;
+        cursor: pointer;
       }
-    }
-    &--cancel {
-      background-color: transparent;
-      border: none;
-      padding: 0.5rem;
-      &:hover {
-        color: $dark-blue;
-        font-weight: $font-w-extrabold;
+      &--proceed {
+        background-color: $bright-blue;
+        border: none;
+        border-radius: 0.4rem;
+        padding: 0.8rem;
+        color: $pale-blue;
+        width: 100%;
+        box-shadow: 0 0.5rem 2rem #b4aef1;
+
+        &:hover {
+          background-color: $light-blue;
+        }
+      }
+      &--cancel {
+        background-color: transparent;
+        border: none;
+        padding: 0.8rem;
+        color: $desaturated-blue;
+        &:hover {
+          color: $dark-blue;
+          font-weight: $font-w-extrabold;
+        }
       }
     }
   }
 }
 
 @media (width > 90rem) {
-  .summary {
-    .plan-content {
-      padding: 2rem;
-    }
-    &__btn {
-      padding: 1rem;
+  .component-container {
+    .summary {
+      .plan-content {
+        padding: 2rem;
+      }
+      &__btn {
+        padding: 1rem;
+      }
     }
   }
 }
 
 @media (width <= 70rem) {
-  .summary {
-    width: min-content;
+  .component-container {
+    .summary {
+      width: min-content;
 
-    &__illustration {
-      width: 100%;
-    }
-
-    &__description {
-      font-size: $font-size-small;
-    }
-
-    .plan-content {
-      &__icon {
-        height: 36px;
+      &__illustration {
+        width: 100%;
       }
 
-      &__container {
-        margin-left: 1rem;
-      }
-
-      &__title,
-      &__price {
+      &__description {
         font-size: $font-size-small;
       }
 
-      &__link {
-        margin-left: 1rem;
+      .plan-content {
+        &__icon {
+          height: 36px;
+        }
+
+        &__container {
+          margin-left: 1rem;
+        }
+
+        &__title,
+        &__price {
+          font-size: $font-size-small;
+        }
+
+        &__link {
+          margin-left: 1rem;
+        }
       }
     }
   }
 }
 
 @media (width <= 40rem) {
-  .summary {
-    &__description {
-      font-size: $font-size-very-small;
-    }
-
-    &__title {
-      font-size: 1.2rem;
-    }
-    .plan-content {
-      &__icon {
-        height: 28px;
-      }
-
-      &__container {
-        margin-left: 0.6rem;
-      }
-
-      &__title,
-      &__price {
+  .component-container {
+    .summary {
+      &__description {
         font-size: $font-size-very-small;
       }
 
-      &__link {
-        margin-left: 0.6rem;
+      &__title {
+        font-size: 1.2rem;
       }
-    }
+      .plan-content {
+        &__icon {
+          height: 28px;
+        }
 
-    &__btn--proceed,
-    &__btn--cancel {
-      font-size: $font-size-very-small;
+        &__container {
+          margin-left: 0.6rem;
+        }
+
+        &__title,
+        &__price {
+          font-size: $font-size-very-small;
+        }
+
+        &__link {
+          margin-left: 0.6rem;
+        }
+      }
+
+      &__btn--proceed,
+      &__btn--cancel {
+        font-size: $font-size-very-small;
+      }
     }
   }
 }
+
+@media (width <= 18rem) {
+  .component-container {
+    .summary {
+      width: 100%;
+
+      &__description {
+        padding: 0.5rem 0;
+      }
+
+      &__title {
+        font-size: 1rem;
+      }
+      .plan-content {
+        flex-wrap: wrap;
+
+        &__icon {
+          margin: 0 auto;
+        }
+
+        &__title,
+        &__price {
+          text-align: center;
+        }
+
+        &__link {
+          margin-left: 0;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+//to do: consider vertical and horisontal screens
 </style>
