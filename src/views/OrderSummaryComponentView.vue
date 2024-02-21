@@ -308,5 +308,43 @@ $font-w-extrabold: 900;
   }
 }
 
-//to do: consider vertical and horisontal screens
+// media for landscape orientation;
+
+@media (width <= 70rem) and (orientation: landscape) {
+  .component-container {
+    padding: 5% 15%;
+    .summary {
+      width: 100%;
+
+      .plan-content {
+        text-align: center;
+        &__container {
+          flex-basis: 60%;
+        }
+      }
+    }
+  }
+}
+
+@media (width <= 40rem) and (orientation: landscape) {
+  .component-container {
+    padding: 5% 5%;
+    .summary {
+      width: 100%;
+      &__content {
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+@media (width <= 18rem) and (orientation: landscape) {
+  .component-container {
+    .summary {
+      &__content {
+        padding: 0.5rem;
+      }
+    }
+  }
+}
 </style>
