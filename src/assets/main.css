@@ -25,3 +25,24 @@ a:visited {
   display: block;
   text-align: center;
 }
+
+@media (width <= 70rem) {
+  .main-styles__description-text,
+  .main-styles__link-back {
+    font-size: 1.6rem;
+  }
+}
+
+@media (width <= 40rem) {
+  .main-styles__description-text,
+  .main-styles__link-back {
+    font-size: 1.2rem;
+  }
+}
+
+@media (width <= 23rem) {
+  .main-styles__description-text,
+  .main-styles__link-back {
+    font-size: 0.8rem;
+  }
+}
