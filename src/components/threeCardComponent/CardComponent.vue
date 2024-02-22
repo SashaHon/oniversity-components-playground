@@ -1,7 +1,6 @@
 <script setup>
 const props = defineProps(['bgColor', 'title', 'description'])
-const imgSrc = 'src/assets/img/three-card-component/icon--' + props.title + '.svg'
-// :src="'src/assets/images/portfolio/' + item.image"
+const imgSrc = `src/assets/img/3-card-component/icon--${props.title}.svg`
 </script>
 
 <template>

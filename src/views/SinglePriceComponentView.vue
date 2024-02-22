@@ -1,9 +1,10 @@
+<script setup>
+import MyDescription from '@/components/general/MyDescription.vue'
+</script>
+
 <template>
   <div class="main-container">
-    <p class="main-styles__description-text">
-      Scroll down to check the component for better preview or go
-    </p>
-    <RouterLink :to="{ name: 'home' }" class="main-styles__link-back">&lt;&lt; Back 🪂</RouterLink>
+    <MyDescription :routeName="`single-price-component`" />
     <div class="component-container">
       <section class="main-container">
         <div class="grid">

@@ -17,13 +17,36 @@ a:visited {
 }
 
 .main-styles__description-text {
-  margin-top: 2em;
   text-align: center;
 }
 
-.main-styles__link-back {
+.main-styles__link {
   display: block;
   text-align: center;
+}
+
+.main-styles__link:hover {
+  cursor: pointer;
+  color: rgb(202, 107, 214);
+}
+
+.main-styles--mt2rem {
+  margin-top: 2rem;
+}
+
+.glimming-animation {
+  /* font-family: monospace;
+  font-size: 3em; */
+  animation: color-change 1s infinite;
+}
+
+@keyframes color-change {
+  100% {
+    color: rgb(202, 107, 214);
+  }
+  0% {
+    color: rgb(37, 113, 145);
+  }
 }
 
 @media (width <= 70rem) {

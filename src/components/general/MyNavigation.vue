@@ -1,22 +1,26 @@
 <script setup>
+import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
+
+const components = ref([
+  { routeName: '3-card-component', fullName: '3 Card component' },
+  { routeName: 'order-summary-component', fullName: 'Order Summary component' },
+  { routeName: 'single-price-component', fullName: 'Single Price component' }
+])
 </script>
 
 <template>
   <nav>
-    <div class="d-flex-around">
-      <RouterLink :to="{ name: '3Cards' }" class="router">3 card component</RouterLink>
-      <RouterLink :to="{ name: 'design3Cards' }" class="router"> ---design</RouterLink>
-    </div>
-    <div class="d-flex-around">
-      <RouterLink :to="{ name: 'orderSummary' }" class="router">Order summary component</RouterLink>
-      <RouterLink :to="{ name: 'designOrderSummary' }" class="router"> ---design</RouterLink>
-    </div>
-    <div class="d-flex-around">
-      <RouterLink :to="{ name: 'singlePrice' }" class="router">Single price component</RouterLink>
-      <RouterLink :to="{ name: 'designSinglePrice' }" class="router"> ---design</RouterLink>
-    </div>
-
+    <ul>
+      <li v-for="component in components" class="d-flex-around" :key="component.routeName">
+        <RouterLink :to="{ name: component.routeName }" class="router">
+          {{ component.fullName }}</RouterLink
+        >
+        <!-- <RouterLink :to="{ path: `/design/${component.routeName}` }" class="router">
+          ---design</RouterLink
+        > -->
+      </li>
+    </ul>
     <RouterLink :to="{ name: 'emptyPage' }" class="router"
       >Task 4..5 [under construction 🚧]</RouterLink
     >

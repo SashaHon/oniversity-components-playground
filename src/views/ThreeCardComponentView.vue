@@ -1,4 +1,5 @@
 <script setup>
+import MyDescription from '@/components/general/MyDescription.vue'
 import CardComponent from '@/components/threeCardComponent/CardComponent.vue'
 
 const cardData = [
@@ -25,10 +26,7 @@ const cardData = [
 
 <template>
   <div class="main-container">
-    <p class="main-styles__description-text">
-      Scroll down to check the component for better preview or go
-    </p>
-    <RouterLink :to="{ name: 'home' }" class="main-styles__link-back">&lt;&lt; Back 🪂</RouterLink>
+    <MyDescription :routeName="`3-card-component`" />
     <div class="cards">
       <!-- let's imagine here is some header and h1 -->
       <section class="cards__container">
