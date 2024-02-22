@@ -43,3 +43,29 @@
     </div>
   </div>
 </template>
+
+<style scoped lang="scss">
+// primary colors
+$c-cyan: hsl(179, 62%, 43%);
+$c-light-cyan: hsl(179, 45%, 57%);
+$c-bright-yellow: hsl(71, 73%, 54%);
+
+// neutral colors
+$c-light-gray: hsl(204, 43%, 93%);
+$c-grayish-blue: hsl(218, 22%, 67%);
+
+//supplementary colors
+$c-container-shadow: hsl(216, 40%, 84%);
+$c-button-shadow: hsl(179, 63%, 37%);
+
+// typography
+$font-size-normal: 16px;
+$font-family: 'Karla';
+$font-weight-light: 100;
+$font-weight-normal: 300;
+$font-weight-bold: 600;
+
+// supplementary
+$border-radius-container: 0.5rem;
+$border-radius-button: 0.24rem;
+</style>
