@@ -6,7 +6,7 @@ import MyDescription from '@/components/general/MyDescription.vue'
   <div class="main-container">
     <MyDescription :routeName="`single-price-component`" />
     <div class="component-container">
-      <section class="main-container">
+      <section class="component-container">
         <div class="grid">
           <div class="grid__subgrid grid__subgrid--info">
             <h2 class="grid__title grid__title--primary">Join our community</h2>
@@ -69,4 +69,178 @@ $font-weight-bold: 600;
 // supplementary
 $border-radius-container: 0.5rem;
 $border-radius-button: 0.24rem;
+
+.main-container {
+  width: 100%;
+}
+.component-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+  width: 100%;
+
+  font-size: $font-size-normal;
+  font-family: $font-family;
+  background-color: $c-light-gray;
+
+  .grid {
+    display: grid;
+    max-width: 60rem;
+    height: 100%;
+    box-shadow: 0 1rem 2rem $c-container-shadow;
+    line-height: 1.5rem;
+    color: #ffff;
+    background-color: $c-light-gray;
+
+    &__subgrid {
+      padding: 3rem;
+      display: grid;
+      gap: 1rem;
+
+      &--info {
+        background-color: white;
+        grid-column: 1 / span 2;
+        border-top-left-radius: $border-radius-container;
+        border-top-right-radius: $border-radius-container;
+      }
+      &--subscription {
+        background-color: $c-cyan;
+        border-bottom-left-radius: $border-radius-container;
+      }
+      &--about {
+        background-color: $c-light-cyan;
+        border-bottom-right-radius: $border-radius-container;
+      }
+    }
+
+    &__title {
+      &--primary {
+        color: $c-cyan;
+        font-weight: $font-weight-bold;
+        font-size: 1.6rem;
+        white-space: pre;
+      }
+    }
+
+    &__subtitle {
+      color: $c-bright-yellow;
+      font-weight: $font-weight-bold;
+      margin-top: 1rem;
+    }
+
+    &__description {
+      &--primary {
+        color: $c-grayish-blue;
+      }
+      &--price {
+        font-size: 2.4rem;
+      }
+
+      &--period {
+        font-size: $font-size-normal;
+        margin-left: 1rem;
+      }
+      &--primary,
+      &--secondary {
+        font-weight: $font-weight-normal;
+      }
+    }
+
+    &__subcontainer {
+      display: flex;
+      align-items: center;
+    }
+
+    &__button {
+      color: #ffff;
+      background-color: $c-bright-yellow;
+      font-size: $font-size-normal;
+      width: 100%;
+      padding: 1rem 0;
+      border: none;
+      border-radius: $border-radius-button;
+      box-shadow: 0 1rem 1rem $c-button-shadow;
+    }
+
+    &__list {
+      list-style: none;
+    }
+
+    &__list-item,
+    &__description--period {
+      font-weight: $font-weight-light;
+      opacity: 0.7;
+    }
+  }
+}
+
+@media (width <= 40rem) {
+  .main-container {
+    padding: 2rem;
+    .grid {
+      height: 100%;
+      &__subgrid {
+        width: 100%;
+        padding: 2rem;
+        &--info {
+          grid-column: 1;
+        }
+
+        &--subscription {
+          border-bottom-left-radius: 0;
+        }
+        &--about {
+          background-color: $c-light-cyan;
+          border-bottom-left-radius: $border-radius-container;
+        }
+      }
+    }
+  }
+}
+
+@media (width <= 28rem) {
+  //to do: fix width of background main container on smallest screens;
+  .main-container {
+    .grid {
+      max-width: 100%;
+
+      &__title {
+        &--primary {
+          font-size: 1.2rem;
+        }
+
+        &--secondary {
+          font-size: 1rem;
+        }
+      }
+      &__subtitle {
+        font-size: 1rem;
+      }
+
+      &__description {
+        &--primary,
+        &--secondary,
+        &--period {
+          font-size: 0.8rem;
+        }
+
+        &--price {
+          font-size: 1.8rem;
+        }
+      }
+
+      &__list-item {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+@media (width <= 20rem) {
+  .main-container {
+    padding: 0;
+  }
+}
 </style>
