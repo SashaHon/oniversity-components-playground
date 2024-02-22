@@ -16,9 +16,6 @@ const components = ref([
         <RouterLink :to="{ name: component.routeName }" class="router">
           {{ component.fullName }}</RouterLink
         >
-        <!-- <RouterLink :to="{ path: `/design/${component.routeName}` }" class="router">
-          ---design</RouterLink
-        > -->
       </li>
     </ul>
     <RouterLink :to="{ name: 'emptyPage' }" class="router"

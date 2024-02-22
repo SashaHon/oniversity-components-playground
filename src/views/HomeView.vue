@@ -1,6 +1,10 @@
 <template>
   <div class="home-container">
-    <img src="../assets/img/study.jpg" alt="Person doing e-magic lineart" />
+    <img
+      src="../assets/img/study.jpg"
+      alt="Person doing e-magic lineart"
+      class="home-container__illustration"
+    />
   </div>
 </template>
 
@@ -9,9 +13,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-img {
-  width: 30%;
-  margin-top: 10%;
+
+  &__illustration {
+    width: 30%;
+    margin-top: 10%;
+  }
 }
 </style>
