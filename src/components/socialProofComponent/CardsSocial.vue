@@ -43,5 +43,11 @@ const reviews = [
 <style scoped lang="scss">
 .cards-container {
   list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  width: 30%;
 }
 </style>
