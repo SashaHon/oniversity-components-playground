@@ -32,14 +32,27 @@ import IntroSocial from '@/components/socialProofComponent/IntroSocial.vue'
 <template>
   <div class="main-container">
     <MyDescription :routeName="`social-proof-component`" />
-    <section class="component-container">
+    <section class="component-container grid">
       <IntroSocial />
-
       <RatingSocial />
-
-      <CardsSocial />
+      <CardsSocial class="grid__rating" />
     </section>
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.component-container {
+  background-color: grey;
+}
+
+.grid {
+  display: grid;
+  grid-column: 2;
+  background-color: blue;
+
+  &__rating {
+    grid-column: 1 / span 2;
+    background-color: green;
+  }
+}
+</style>
