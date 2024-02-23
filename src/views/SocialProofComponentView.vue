@@ -41,8 +41,13 @@ import IntroSocial from '@/components/socialProofComponent/IntroSocial.vue'
 </template>
 
 <style scoped lang="scss">
+@import '@/assets/_social-proof-variables.scss';
 .component-container {
   background-color: grey;
+  font-family: $font-family;
+  font-size: $font-size-normal;
+  min-height: 100vh;
+  padding: 10%;
 }
 
 .grid {

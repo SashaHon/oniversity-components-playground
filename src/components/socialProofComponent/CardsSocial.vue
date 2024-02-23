@@ -1,26 +1,28 @@
+import { resolveDirective } from 'vue'; import { routerViewLocationKey } from 'vue-router'; import {
+routerViewLocationKey } from 'vue-router';
 <script setup>
 const reviews = [
   {
     reviewer: 'Colton Smith',
     isVerifiedBuyer: true,
-    quote: `We needed the same printed design as the one we had ordered a week prior. Not only did they
-    find the original order, but we also received it in time. Excellent!`,
-    imgUrl: ``
+    quote: `“ We needed the same printed design as the one we had ordered a week prior. Not only did they
+    find the original order, but we also received it in time. Excellent! ”`,
+    imgUrl: 'src/assets/img/social-proof-component/colton.jpg'
   },
   {
     reviewer: 'Irene Roberts',
     isVerifiedBuyer: true,
-    quote: `Customer service is always excellent and very quick turn around. Completely delighted
-    with the simplicity of the purchase and the speed of delivery.`,
-    imgUrl: ``
+    quote: `“ Customer service is always excellent and very quick turn around. Completely delighted
+    with the simplicity of the purchase and the speed of delivery. ”`,
+    imgUrl: 'src/assets/img/social-proof-component/irene.jpg'
   },
   {
     reviewer: 'Anne Wallace',
     isVerifiedBuyer: true,
-    quote: `Put
+    quote: `“ Put
     an order with this company and can only praise them for the very high standard. Will definitely
-    use them again and recommend them to everyone!`,
-    imgUrl: ``
+    use them again and recommend them to everyone!  ”`,
+    imgUrl: 'src/assets/img/social-proof-component/anne.jpg'
   }
 ]
 </script>
@@ -28,14 +30,15 @@ const reviews = [
 <template>
   <ul class="cards-container">
     <li v-for="(review, index) in reviews" :key="review.reviewer + index" class="card">
-      <div class="card__top-content">
-        <img :src="`#`" :alt="`${review.reviewer} profile photo`" class="card__photo" />
+      <img :src="review.imgUrl" :alt="`${review.reviewer} profile photo`" class="card__photo" />
+      <div class="card__container--user-info">
         <h2 class="card__reviewer">{{ review.reviewer }}</h2>
         <p v-if="review.isVerifiedBuyer" class="card__verified">Verified Buyer</p>
       </div>
-      <div class="card__quote">
+
+      <p class="card__quote">
         {{ review.quote }}
-      </div>
+      </p>
     </li>
   </ul>
 </template>
@@ -50,7 +53,46 @@ const reviews = [
 }
 
 .card {
+  background-color: $c-very-dark-magenta;
+  color: $white;
+  height: fit-content;
+  border-radius: 0.5rem;
+  padding: 2rem;
   width: 30%;
-  background-color: $very-dark-magenta;
+
+  display: grid;
+  grid-column: 2;
+  grid-template-columns: min-content;
+
+  &__photo {
+    border-radius: 100%;
+    height: 3rem;
+  }
+
+  &__reviewer {
+    font-size: $font-size-normal;
+    font-weight: $font-weight-bold;
+  }
+
+  &__verified {
+    color: $c-soft-pink;
+  }
+
+  &__quote {
+    grid-column: 1 / span 2;
+    margin-top: 1rem;
+  }
+
+  &__container--user-info {
+    margin-left: 2rem;
+  }
+
+  &:nth-child(2) {
+    align-self: center;
+  }
+
+  &:last-child {
+    align-self: end;
+  }
 }
 </style>
