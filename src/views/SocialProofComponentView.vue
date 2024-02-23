@@ -1,5 +1,7 @@
 <script setup>
 import MyDescription from '@/components/general/MyDescription.vue'
+import RatingSocial from '@/components/socialProofComponent/RatingSocial.vue'
+import CardsSocial from '@/components/socialProofComponent/CardsSocial.vue'
 </script>
 
 <template>
@@ -15,18 +17,12 @@ import MyDescription from '@/components/general/MyDescription.vue'
           </p>
         </div>
         <div class="social__rating-container">
-          Rated 5 Stars in Reviews Rated 5 Stars in Report Guru Rated 5 Stars in BestTech
+          <RatingSocial />
         </div>
       </div>
 
       <div class="social__bottom-container">
-        Colton Smith Verified Buyer "We needed the same printed design as the one we had ordered a
-        week prior. Not only did they find the original order, but we also received it in time.
-        Excellent!" Irene Roberts Verified Buyer "Customer service is always excellent and very
-        quick turn around. Completely delighted with the simplicity of the purchase and the speed of
-        delivery." Anne Wallace Verified Buyer "Put an order with this company and can only praise
-        them for the very high standard. Will definitely use them again and recommend them to
-        everyone!"
+        <CardsSocial />
       </div>
     </section>
   </div>
