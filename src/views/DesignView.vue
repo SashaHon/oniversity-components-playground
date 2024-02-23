@@ -5,7 +5,8 @@ const route = useRoute()
 const designName = route.params.designName
 
 const imgUrl = (name) => {
-  return new URL(`../assets/img/${designName}/design/${name}.jpg`, import.meta.url).href
+  const imgUrl = new URL(`../assets/img/${designName}/design/${name}.jpg`, import.meta.url).href
+  return /^(?!.*undefined).*$/.test(imgUrl) ? imgUrl : false
 }
 
 const desktopDesign = imgUrl('desktop-design')
