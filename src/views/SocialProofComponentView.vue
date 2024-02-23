@@ -42,7 +42,7 @@ import IntroSocial from '@/components/socialProofComponent/IntroSocial.vue'
   }
 }
 
-@media (orientation: portrait) {
+@media (orientation: portrait), (width <= 32rem) and (orientation: landscape) {
   .grid {
     grid-column: 1;
     grid-template-columns: 100%;

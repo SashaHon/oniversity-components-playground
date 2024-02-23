@@ -30,7 +30,6 @@
 @media (width > 52rem) and (orientation: portrait) {
   .social {
     padding: 12% 12% 6% 12%;
-    // height: min-content;
   }
 }
 
@@ -44,6 +43,28 @@
   }
 }
 
+@media (width < 65rem) and (orientation: landscape) {
+  .social {
+    &__title {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+
+    &__description {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (orientation: portrait), (width <= 32rem) and (orientation: landscape) {
+  .social {
+    text-align: center;
+
+    &__title {
+      width: 100%;
+    }
+  }
+}
 // @media (width > 90rem) {
 // }
 

@@ -124,26 +124,33 @@ const reviews = [
   }
 }
 
-// @media (width > 90rem) {
-// }
+@media (width < 65rem) and (orientation: landscape) {
+  .cards-container {
+    flex-direction: column;
+  }
+  .card {
+    margin-top: 1rem;
+    width: 80%;
+  }
+}
 
-// @media (width <= 70rem) {
-// }
+@media (width <= 32rem) and (orientation: landscape) {
+  .card {
+    width: 100%;
+  }
+}
 
-// @media (width <= 40rem) {
-// }
+@media (width <= 18rem) and (orientation: portrait) {
+  .card {
+    min-width: min-content;
+    height: fit-content;
 
-// @media (width <= 18rem) {
-// }
-
-// // media for landscape orientation;
-
-// @media (width <= 70rem) and (orientation: landscape) {
-// }
-
-// @media (width <= 40rem) and (orientation: landscape) {
-// }
-
-// @media (width <= 18rem) and (orientation: landscape) {
-// }
+    &:nth-child(2) {
+      align-self: auto;
+    }
+    &:nth-child(3) {
+      align-self: auto;
+    }
+  }
+}
 </style>

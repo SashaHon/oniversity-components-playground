@@ -111,6 +111,25 @@ const numberOfStars = 5
   }
 }
 
+@media (width < 65rem) and (orientation: landscape) {
+  .rating {
+    &__list {
+      padding: 12% 6% 6% 0;
+    }
+
+    &__list-item {
+      width: 100%;
+    }
+  }
+}
+
+@media (width <= 32rem) and (orientation: landscape) {
+  .rating {
+    &__list {
+      padding: 0 6% 6%;
+    }
+  }
+}
 // @media (width <= 18rem) {
 // }
 
