@@ -24,6 +24,11 @@ const router = createRouter({
       component: () => import('@/views/SinglePriceComponentView.vue')
     },
     {
+      path: '/social-proof-component',
+      name: 'social-proof-component',
+      component: () => import('@/views/SocialProofComponentView.vue')
+    },
+    {
       path: '/design/:designName',
       name: 'design',
       component: () => import('@/views/DesignView.vue')
