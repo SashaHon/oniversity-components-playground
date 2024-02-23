@@ -12,12 +12,12 @@
 @import '@/assets/_social-proof-variables.scss';
 
 .social {
-  padding: 16% 8% 8% 16%;
+  padding: 12% 6% 6% 12%;
 
   &__title {
     font-size: 3rem;
     font-weight: $font-weight-extrabold;
-    margin-right: 3rem;
+    margin-right: 7rem;
     line-height: 3rem;
   }
 

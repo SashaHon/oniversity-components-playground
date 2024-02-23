@@ -50,12 +50,12 @@ const reviews = [
   list-style: none;
   display: flex;
   justify-content: space-between;
-  padding: 0 8% 8%;
+  padding: 0 6% 6%;
 }
 
 .card {
   background-color: $c-very-dark-magenta;
-  color: $white;
+  color: $c-white;
   height: fit-content;
   border-radius: 0.5rem;
   padding: 2rem;
