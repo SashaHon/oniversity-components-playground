@@ -2,9 +2,10 @@
 import MyDescription from '@/components/general/MyDescription.vue'
 import RatingSocial from '@/components/socialProofComponent/RatingSocial.vue'
 import CardsSocial from '@/components/socialProofComponent/CardsSocial.vue'
+import IntroSocial from '@/components/socialProofComponent/IntroSocial.vue'
 </script>
 
-<template>
+<!-- <template>
   <div class="main-container">
     <MyDescription :routeName="`social-proof-component`" />
     <section class="component-container">
@@ -24,6 +25,19 @@ import CardsSocial from '@/components/socialProofComponent/CardsSocial.vue'
       <div class="social__bottom-container">
         <CardsSocial />
       </div>
+    </section>
+  </div>
+</template> -->
+
+<template>
+  <div class="main-container">
+    <MyDescription :routeName="`social-proof-component`" />
+    <section class="component-container">
+      <IntroSocial />
+
+      <RatingSocial />
+
+      <CardsSocial />
     </section>
   </div>
 </template>
