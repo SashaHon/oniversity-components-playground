@@ -50,6 +50,7 @@ const reviews = [
   list-style: none;
   display: flex;
   justify-content: space-between;
+  padding: 0 8% 8%;
 }
 
 .card {

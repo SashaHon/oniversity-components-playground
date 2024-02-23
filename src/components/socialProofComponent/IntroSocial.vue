@@ -7,3 +7,23 @@
     </p>
   </div>
 </template>
+
+<style scoped lang="scss">
+@import '@/assets/_social-proof-variables.scss';
+
+.social {
+  padding: 16% 8% 8% 16%;
+
+  &__title {
+    font-size: 3rem;
+    font-weight: $font-weight-extrabold;
+    margin-right: 3rem;
+    line-height: 3rem;
+  }
+
+  &__description {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+}
+</style>

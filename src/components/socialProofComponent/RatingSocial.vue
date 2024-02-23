@@ -14,3 +14,9 @@ const ratedPlatform = ['Reviews', 'Report Guru', 'BestTech']
     </li>
   </ul>
 </template>
+
+<style scoped lang="scss">
+.rating__list {
+  padding: 16% 16% 0;
+}
+</style>

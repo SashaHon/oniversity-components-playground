@@ -46,8 +46,9 @@ import IntroSocial from '@/components/socialProofComponent/IntroSocial.vue'
   background-color: grey;
   font-family: $font-family;
   font-size: $font-size-normal;
+  color: $c-very-dark-magenta;
   min-height: 100vh;
-  padding: 10%;
+  //   padding: 10%;
 }
 
 .grid {
