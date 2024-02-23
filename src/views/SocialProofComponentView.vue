@@ -5,30 +5,6 @@ import CardsSocial from '@/components/socialProofComponent/CardsSocial.vue'
 import IntroSocial from '@/components/socialProofComponent/IntroSocial.vue'
 </script>
 
-<!-- <template>
-  <div class="main-container">
-    <MyDescription :routeName="`social-proof-component`" />
-    <section class="component-container">
-      <div class="social__top-container">
-        <div class="social__top-left-container">
-          <h1 class="social__title">10,000+ of our users love our products.</h1>
-          <p class="social__description">
-            We only provide great products combined with excellent customer service. See what our
-            satisfied customers are saying about our services.
-          </p>
-        </div>
-        <div class="social__rating-container">
-          <RatingSocial />
-        </div>
-      </div>
-
-      <div class="social__bottom-container">
-        <CardsSocial />
-      </div>
-    </section>
-  </div>
-</template> -->
-
 <template>
   <div class="main-container">
     <MyDescription :routeName="`social-proof-component`" />
@@ -43,12 +19,17 @@ import IntroSocial from '@/components/socialProofComponent/IntroSocial.vue'
 <style scoped lang="scss">
 @import '@/assets/_social-proof-variables.scss';
 .component-container {
-  background-color: grey;
   font-family: $font-family;
   font-size: $font-size-normal;
   color: $c-very-dark-magenta;
   min-height: 100vh;
-  //   padding: 10%;
+
+  background-image: url('@/assets/img/social-proof-component/bg-pattern-top-desktop.svg'),
+    url('@/assets/img/social-proof-component/bg-pattern-bottom-desktop.svg');
+  background-position:
+    left top,
+    right bottom;
+  background-repeat: no-repeat;
 }
 
 .grid {

@@ -17,8 +17,8 @@
   &__title {
     font-size: 3rem;
     font-weight: $font-weight-extrabold;
-    margin-right: 7rem;
     line-height: 3rem;
+    width: 70%;
   }
 
   &__description {
