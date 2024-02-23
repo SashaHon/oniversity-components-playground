@@ -39,3 +39,9 @@ const reviews = [
     </li>
   </ul>
 </template>
+
+<style scoped lang="scss">
+.cards-container {
+  list-style: none;
+}
+</style>

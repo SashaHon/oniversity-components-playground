@@ -48,11 +48,10 @@ import IntroSocial from '@/components/socialProofComponent/IntroSocial.vue'
 .grid {
   display: grid;
   grid-column: 2;
-  background-color: blue;
+  grid-template-columns: 50%;
 
   &__rating {
     grid-column: 1 / span 2;
-    background-color: green;
   }
 }
 </style>
