@@ -41,6 +41,8 @@ const reviews = [
 </template>
 
 <style scoped lang="scss">
+@import '@/assets/_social-proof-variables.scss';
+
 .cards-container {
   list-style: none;
   display: flex;
@@ -49,5 +51,6 @@ const reviews = [
 
 .card {
   width: 30%;
+  background-color: $very-dark-magenta;
 }
 </style>
