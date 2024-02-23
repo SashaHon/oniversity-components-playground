@@ -41,4 +41,36 @@ import IntroSocial from '@/components/socialProofComponent/IntroSocial.vue'
     grid-column: 1 / span 2;
   }
 }
+
+@media (orientation: portrait) {
+  .grid {
+    grid-column: 1;
+    grid-template-columns: 100%;
+    grid-template-rows: min-content;
+
+    &__rating {
+      grid-column: 1;
+    }
+  }
+}
+
+// @media (width <= 70rem) {
+// }
+
+// @media (width <= 40rem) {
+// }
+
+// @media (width <= 18rem) {
+// }
+
+// // media for landscape orientation;
+
+// @media (width <= 70rem) and (orientation: landscape) {
+// }
+
+// @media (width <= 40rem) and (orientation: landscape) {
+// }
+
+// @media (width <= 18rem) and (orientation: landscape) {
+// }
 </style>

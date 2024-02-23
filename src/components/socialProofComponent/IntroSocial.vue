@@ -26,4 +26,44 @@
     font-size: 1.2rem;
   }
 }
+
+@media (width > 52rem) and (orientation: portrait) {
+  .social {
+    padding: 12% 12% 6% 12%;
+    // height: min-content;
+  }
+}
+
+@media (width <= 24rem) {
+  .social {
+    text-align: center;
+    padding: 6% 6% 0 6%;
+    &__title {
+      width: 100%;
+    }
+  }
+}
+
+// @media (width > 90rem) {
+// }
+
+// @media (width <= 70rem) {
+// }
+
+// @media (width <= 40rem) {
+// }
+
+// @media (width <= 18rem) {
+// }
+
+// // media for landscape orientation;
+
+// @media (width <= 70rem) and (orientation: landscape) {
+// }
+
+// @media (width <= 40rem) and (orientation: landscape) {
+// }
+
+// @media (width <= 18rem) and (orientation: landscape) {
+// }
 </style>

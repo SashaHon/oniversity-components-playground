@@ -62,4 +62,66 @@ const numberOfStars = 5
     font-weight: $font-weight-bold;
   }
 }
+
+@media (width >= 52rem) and (orientation: portrait) {
+  .rating {
+    &__list {
+      padding: 6% 12% 6% 12%;
+    }
+  }
+}
+
+// @media (width > 52rem) and (height >) and (orientation: portrait) {
+//   .rating {
+//     &__list {
+//       padding: 6% 12% 6% 12%;
+//     }
+//   }
+// }
+
+// @media (width > 90rem) {
+// }
+
+// @media (width <= 70rem) {
+// }
+
+@media (width <= 32rem) {
+  .rating {
+    &__list {
+      padding: 0 6% 6%;
+    }
+
+    &__list-item {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    &__text {
+      text-align: center;
+    }
+  }
+}
+
+@media (width <= 24rem) {
+  .rating {
+    &__list-item {
+      width: 100%;
+    }
+  }
+}
+
+// @media (width <= 18rem) {
+// }
+
+// // media for landscape orientation;
+
+// @media (width <= 70rem) and (orientation: landscape) {
+// }
+
+// @media (width <= 40rem) and (orientation: landscape) {
+// }
+
+// @media (width <= 18rem) and (orientation: landscape) {
+// }
 </style>

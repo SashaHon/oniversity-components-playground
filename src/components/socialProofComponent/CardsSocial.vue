@@ -96,4 +96,54 @@ const reviews = [
     align-self: end;
   }
 }
+
+@media (width > 52rem) and (orientation: portrait) {
+  .cards-container {
+    padding: 0 6% 6%;
+  }
+}
+
+@media (width < 52rem) and (orientation: portrait) {
+  .cards-container {
+    flex-direction: column;
+  }
+  .card {
+    width: 80%;
+  }
+}
+
+@media (width <= 32rem) {
+  .card {
+    margin-top: 1rem;
+  }
+}
+
+@media (width <= 24rem) {
+  .card {
+    width: 100%;
+  }
+}
+
+// @media (width > 90rem) {
+// }
+
+// @media (width <= 70rem) {
+// }
+
+// @media (width <= 40rem) {
+// }
+
+// @media (width <= 18rem) {
+// }
+
+// // media for landscape orientation;
+
+// @media (width <= 70rem) and (orientation: landscape) {
+// }
+
+// @media (width <= 40rem) and (orientation: landscape) {
+// }
+
+// @media (width <= 18rem) and (orientation: landscape) {
+// }
 </style>
