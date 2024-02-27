@@ -13,3 +13,10 @@ import EcomProductPage from '@/components/ecommerceProductPageComponent/EcomProd
     </div>
   </div>
 </template>
+
+<style scoped lang="scss">
+.main-container {
+  min-height: 100vh;
+  width: 100%;
+}
+</style>

@@ -37,3 +37,19 @@ const product = {
     </section>
   </article>
 </template>
+
+<style scoped lang="scss">
+.product {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: grey;
+
+  &__container--display {
+    padding: 2rem;
+  }
+
+  &__container--info {
+    padding: 4rem;
+  }
+}
+</style>
