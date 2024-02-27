@@ -6,35 +6,31 @@ const designName = route.params.designName
 
 const imgUrl = (name) => {
   const imgUrl = new URL(`../assets/img/${designName}/design/${name}.jpg`, import.meta.url).href
-  return /^(?!.*undefined).*$/.test(imgUrl) ? imgUrl : false
+  return imgUrl.includes(name) ? imgUrl : false
 }
 
-const desktopDesign = imgUrl('desktop-design')
-const desktopPreview = imgUrl('desktop-preview')
-const activeStates = imgUrl('active-states')
-const mobileDesign = imgUrl('mobile-design')
+const designs = [
+  { url: imgUrl('desktop-design'), name: 'Desktop' },
+  { url: imgUrl('desktop-preview'), name: 'Desktop preview' },
+  { url: imgUrl('desktop-design-lightbox'), name: 'Desktop lightbox' },
+  { url: imgUrl('active-states'), name: 'Active states' },
+  { url: imgUrl('active-states-basket-empty'), name: 'Active states empty basket' },
+  { url: imgUrl('active-states-basket-filled'), name: 'Active states filled basket' },
+  { url: imgUrl('active-states-lightbox'), name: 'Active states lightbox' },
+  { url: imgUrl('mobile-design'), name: 'Mobile' },
+  { url: imgUrl('mobile-menu'), name: 'Mobile menu' },
+  { url: imgUrl('mobile-design-basket-empty'), name: 'Mobile empty basket' },
+  { url: imgUrl('mobile-design-basket-filled'), name: 'Mobile filled basket' }
+]
 </script>
 
 <template>
   <section class="design-container">
-    <div v-if="desktopDesign">
-      <h2 class="main-styles__description-text">Desktop Design</h2>
-      <img :src="desktopDesign" alt="desktop design" />
-    </div>
-
-    <div v-if="desktopPreview">
-      <h2 class="main-styles__description-text">Desktop Preview</h2>
-      <img :src="desktopPreview" alt="desktop preview" />
-    </div>
-
-    <div v-if="activeStates">
-      <h2 class="main-styles__description-text">Active States</h2>
-      <img :src="activeStates" alt="active states" />
-    </div>
-
-    <div v-if="mobileDesign">
-      <h2 class="main-styles__description-text">Mobile Design</h2>
-      <img :src="mobileDesign" alt="mobile design" />
+    <div v-for="(design, index) in designs" :key="index">
+      <div v-if="design.url">
+        <h2 class="main-styles__description-text">{{ design.name }} 🔻</h2>
+        <img :src="design.url" :alt="design.name" />
+      </div>
     </div>
   </section>
 </template>
@@ -44,5 +40,9 @@ const mobileDesign = imgUrl('mobile-design')
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  h2 {
+    margin-top: 4rem;
+  }
 }
 </style>
