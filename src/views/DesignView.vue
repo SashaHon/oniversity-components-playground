@@ -22,15 +22,15 @@ const designs = [
   { url: imgUrl('mobile-design-basket-empty'), name: 'Mobile empty basket' },
   { url: imgUrl('mobile-design-basket-filled'), name: 'Mobile filled basket' }
 ]
+
+const currentDesigns = designs.filter((el) => el.url)
 </script>
 
 <template>
   <section class="design-container">
-    <div v-for="(design, index) in designs" :key="index">
-      <div v-if="design.url">
-        <h2 class="main-styles__description-text">{{ design.name }} 🔻</h2>
-        <img :src="design.url" :alt="design.name" />
-      </div>
+    <div v-for="(design, index) in currentDesigns" :key="index + design.name">
+      <h2 class="main-styles__description-text">{{ design.name }} 🔻</h2>
+      <img :src="design.url" :alt="`${design.name} design`" />
     </div>
   </section>
 </template>
