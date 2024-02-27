@@ -34,6 +34,11 @@ const router = createRouter({
       component: () => import('@/views/DesignView.vue')
     },
     {
+      path: '/ecommerce-product-page-component',
+      name: 'ecommerce-product-page-component',
+      component: () => import('@/views/EcommerceProductPageView.vue')
+    },
+    {
       path: '/empty-page',
       name: 'emptyPage',
       component: () => import('@/views/EmptyPageView.vue')
