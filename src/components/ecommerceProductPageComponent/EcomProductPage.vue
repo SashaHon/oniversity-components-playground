@@ -1,4 +1,7 @@
 <script setup>
+import EcomButtonChangeQuantity from './EcomButtonChangeQuantity.vue'
+import EcomButtonPrimary from './EcomButtonPrimary.vue'
+
 const imgList = [
   { url: 'src/assets/img/ecommerce-product-page-component/images/image-product-1.jpg' },
   { url: 'src/assets/img/ecommerce-product-page-component/images/image-product-1-thumbnail.jpg' },
@@ -42,29 +45,12 @@ const product = {
       </div>
 
       <div class="product__btn-container">
-        <div class="product__container--add">
-          <button class="product__btn product__btn--minus">
-            <img
-              src="@/assets/img/ecommerce-product-page-component/images/icon-minus.svg"
-              alt="plus icon"
-            />
-          </button>
-          <span class="product__number">0</span>
-          <button class="product__btn product__btn--plus">
-            <img
-              src="@/assets/img/ecommerce-product-page-component/images/icon-plus.svg"
-              alt="plus icon"
-            />
-          </button>
-        </div>
-        <button class="product__btn product__btn--add">
-          <img
-            src="@/assets/img/ecommerce-product-page-component/images/icon-cart.svg"
-            alt="cart icon"
-            class="product__cart-icon"
-          />
-          Add to cart
-        </button>
+        <EcomButtonChangeQuantity />
+        <EcomButtonPrimary
+          :imgUrl="'src/assets/img/ecommerce-product-page-component/images/icon-cart.svg'"
+          :text="'Add to cart'"
+          :altText="'cart icon'"
+        />
       </div>
     </section>
   </article>
@@ -158,55 +144,6 @@ const product = {
 
   &__container--price {
     margin-top: 2rem;
-  }
-
-  &__container--add {
-    background-color: $c-light-grayish-blue;
-    border-radius: 0.3rem;
-    width: fit-content;
-    padding: 1rem 1rem;
-    min-width: 10rem;
-    width: 30%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__number {
-    font-weight: $font-w-bold;
-  }
-
-  &__cart-icon {
-    width: 1rem;
-    margin-right: 0.5rem;
-  }
-
-  &__btn {
-    background-color: transparent;
-    border-width: 0;
-    font-family: inherit;
-    font-size: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-    padding: 0;
-
-    &--minus {
-      transform: translateY(-3px);
-    }
-
-    &--add {
-      margin-left: 1rem;
-      background-color: $c-orange;
-      color: $c-light-grayish-blue;
-      font-weight: $font-w-bold;
-      padding: 1rem 1rem;
-      border-radius: 0.3rem;
-      width: 100%;
-      box-shadow: 0 1rem 1rem $c-pale-orange;
-      white-space: pre;
-    }
   }
 }
 </style>
