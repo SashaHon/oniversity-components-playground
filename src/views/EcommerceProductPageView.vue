@@ -15,8 +15,11 @@ import EcomProductPage from '@/components/ecommerceProductPageComponent/EcomProd
 </template>
 
 <style scoped lang="scss">
+@import '@/assets/_ecommerce-product-page-variables.scss';
 .main-container {
   min-height: 100vh;
   width: 100%;
+
+  font-family: $font-family;
 }
 </style>
