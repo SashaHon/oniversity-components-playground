@@ -1,6 +1,7 @@
 <script setup>
 import EcomButtonChangeQuantity from './EcomButtonChangeQuantity.vue'
 import EcomButtonPrimary from './EcomButtonPrimary.vue'
+import EcomPriceSection from './EcomPriceSection.vue'
 
 const imgList = [
   { url: 'src/assets/img/ecommerce-product-page-component/images/image-product-1.jpg' },
@@ -36,13 +37,11 @@ const product = {
       <p class="product__company">{{ product.company }}</p>
       <h2 class="product__title">{{ product.name }}</h2>
       <p class="product__description">{{ product.description }}</p>
-      <div class="product__container--price">
-        <div class="product__price-container">
-          <span class="product__price product__price--new">${{ product.discountedPrice }}.00</span>
-          <span class="product__discount">{{ product.discountPercentage }}%</span>
-        </div>
-        <span class="product__price product__price--old">${{ product.price }}.00</span>
-      </div>
+      <EcomPriceSection
+        :discountedPrice="product.discountedPrice"
+        :discountPercentage="product.discountPercentage"
+        :price="product.price"
+      />
 
       <div class="product__btn-container">
         <EcomButtonChangeQuantity />
@@ -92,35 +91,10 @@ const product = {
     color: $c-dark-grayish-blue;
   }
 
-  &__price-container {
-    display: flex;
-    align-items: center;
-  }
-
   &__btn-container {
     display: flex;
     height: fit-content;
     margin-top: 2rem;
-  }
-
-  &__price {
-    font-weight: $font-w-bold;
-    &--new {
-      font-size: 2rem;
-    }
-
-    &--old {
-      text-decoration: line-through;
-      color: $c-grayish-blue;
-    }
-  }
-
-  &__discount {
-    font-weight: $font-w-bold;
-    border-radius: 0.3rem;
-    margin-left: 1rem;
-    padding: 0 0.4rem;
-    background-color: $c-pale-orange;
   }
 
   &__company,
@@ -140,10 +114,6 @@ const product = {
 
   &__container--info {
     padding: 20% 10%;
-  }
-
-  &__container--price {
-    margin-top: 2rem;
   }
 }
 </style>
