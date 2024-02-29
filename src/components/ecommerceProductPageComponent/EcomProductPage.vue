@@ -3,30 +3,26 @@ import EcomButtonChangeQuantity from './EcomButtonChangeQuantity.vue'
 import EcomButtonPrimary from './EcomButtonPrimary.vue'
 import EcomPriceSection from './EcomPriceSection.vue'
 
-const imgList = [
-  { url: 'src/assets/img/ecommerce-product-page-component/images/image-product-1.jpg' },
-  { url: 'src/assets/img/ecommerce-product-page-component/images/image-product-1-thumbnail.jpg' },
-  { url: 'src/assets/img/ecommerce-product-page-component/images/image-product-2-thumbnail.jpg' },
-  { url: 'src/assets/img/ecommerce-product-page-component/images/image-product-3-thumbnail.jpg' },
-  { url: 'src/assets/img/ecommerce-product-page-component/images/image-product-4-thumbnail.jpg' }
-]
+import { inject } from 'vue'
 
-const product = {
-  company: 'Sneaker Company',
-  name: 'Fall Limited Edition Sneakers',
-  description: `These low-profile sneakers are your perfect
-      casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the
-      weather can offer.`,
-  discountedPrice: 125.0,
-  discountPercentage: 50,
-  price: 250.0
+const addedNumber = inject('addedNumber')
+const product = inject('product')
+const cartList = inject('cartList')
+
+const addToCart = () => {
+  if (!addedNumber.value) return
+
+  for (let i = 0; i < addedNumber.value; i++) {
+    cartList.value.push(product)
+  }
+  addedNumber.value = 0
 }
 </script>
 <template>
   <article class="product">
     <section class="product__container--display">
       <img
-        v-for="(img, index) in imgList"
+        v-for="(img, index) in product.imgUrlList"
         :key="index + 555"
         :src="img.url"
         alt="product photo"
@@ -44,8 +40,9 @@ const product = {
       />
 
       <div class="product__btn-container">
-        <EcomButtonChangeQuantity class="product__btn" />
+        <EcomButtonChangeQuantity class="product__btn" :product="product" />
         <EcomButtonPrimary
+          @click="addToCart"
           class="product__btn"
           :imgUrl="'src/assets/img/ecommerce-product-page-component/images/icon-cart.svg'"
           :text="'Add to cart'"

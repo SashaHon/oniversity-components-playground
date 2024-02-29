@@ -1,8 +1,36 @@
-<script setup></script>
+<script setup>
+import { ref, inject } from 'vue'
+const props = defineProps(['product'])
+const addedNumber = inject('addedNumber')
+const cartList = inject('cartList')
+
+const getSelectedNumberInCart = () => {
+  return cartList.value.reduce((number, cartItem) => {
+    if (props.product.id !== cartItem.id) return
+    return (number += 1)
+  }, 0)
+}
+
+const selectedNumber = ref(getSelectedNumberInCart())
+
+const increaseSelectedNumber = () => {
+  addedNumber.value += 1
+  selectedNumber.value += 1
+  console.log('added number', addedNumber.value)
+  console.log('selected number', selectedNumber.value)
+  console.log('number in cart', getSelectedNumberInCart())
+}
+
+const decreaseSelectedNumber = () => {
+  if (selectedNumber.value > 0) {
+    selectedNumber.value -= 1
+  }
+}
+</script>
 
 <template>
   <div class="container">
-    <button class="btn btn--minus">
+    <button @click="decreaseSelectedNumber" class="btn btn--minus">
       <svg
         width="12"
         height="4"
@@ -18,8 +46,8 @@
         <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
       </svg>
     </button>
-    <span class="container__number">0</span>
-    <button class="btn btn--plus">
+    <span class="container__number">{{ selectedNumber }}</span>
+    <button @click="increaseSelectedNumber" class="btn btn--plus">
       <svg
         width="12"
         height="12"

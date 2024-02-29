@@ -1,3 +1,8 @@
+<script setup>
+import { inject } from 'vue'
+const cartList = inject('cartList')
+</script>
+
 <template>
   <div class="cart-icon">
     <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
@@ -7,6 +12,7 @@
         fill-rule="nonzero"
       />
     </svg>
+    <p>{{ cartList.length }}</p>
   </div>
 </template>
 
