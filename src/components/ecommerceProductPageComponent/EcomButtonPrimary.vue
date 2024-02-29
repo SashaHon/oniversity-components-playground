@@ -28,5 +28,11 @@ const props = defineProps(['imgUrl', 'text', 'altText'])
     width: 1rem;
     margin-right: 0.5rem;
   }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    box-shadow: 0 1rem 1rem $c-orange-box-shadow;
+  }
 }
 </style>

@@ -11,7 +11,11 @@ const navList = [
 <template>
   <ul class="nav">
     <li class="nav__logo nav__item">sneakers</li>
-    <li v-for="(link, index) in navList" :key="`${link}${index}`" class="nav__item">
+    <li
+      v-for="(link, index) in navList"
+      :key="`${link}${index}`"
+      class="nav__item nav__item--black-hover"
+    >
       <a :href="link.url"> {{ link.page }}</a>
     </li>
     <li class="nav__acccount-container">
@@ -25,11 +29,13 @@ const navList = [
         </svg>
       </div>
 
-      <img
-        src="@/assets/img/ecommerce-product-page-component/images/image-avatar.png"
-        alt="profile avatar"
-        class="nav__avatar"
-      />
+      <div class="nav__avatar-border">
+        <img
+          src="@/assets/img/ecommerce-product-page-component/images/image-avatar.png"
+          alt="profile avatar"
+          class="nav__avatar"
+        />
+      </div>
     </li>
   </ul>
 </template>
@@ -59,6 +65,10 @@ const navList = [
     a {
       color: $c-dark-grayish-blue;
     }
+
+    &--black-hover a:hover {
+      color: $c-black;
+    }
   }
 
   &__acccount-container {
@@ -69,12 +79,26 @@ const navList = [
     width: 12%;
   }
 
+  &__cart-icon:hover {
+    cursor: pointer;
+    & path {
+      fill: $c-black;
+    }
+  }
+
   &__cart-icon path {
     fill: $c-dark-grayish-blue;
   }
 
   &__avatar {
     max-height: 3rem;
+    border: 3px solid transparent;
+
+    &:hover {
+      cursor: pointer;
+      border: 3px solid $c-orange;
+      border-radius: 100%;
+    }
   }
 }
 </style>

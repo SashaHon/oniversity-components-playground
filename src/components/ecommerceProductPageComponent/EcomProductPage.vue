@@ -44,8 +44,9 @@ const product = {
       />
 
       <div class="product__btn-container">
-        <EcomButtonChangeQuantity />
+        <EcomButtonChangeQuantity class="product__btn" />
         <EcomButtonPrimary
+          class="product__btn"
           :imgUrl="'src/assets/img/ecommerce-product-page-component/images/icon-cart.svg'"
           :text="'Add to cart'"
           :altText="'cart icon'"
@@ -62,7 +63,7 @@ const product = {
   display: grid;
   grid-template-columns: 50% 50%;
   font-size: $font-size-paragraph;
-  padding: 10%;
+  padding: 5% 10%;
 
   &__photo {
     aspect-ratio: 1 / 1;
@@ -71,6 +72,12 @@ const product = {
 
     &:first-child {
       width: 100%;
+    }
+
+    &:not(:first-child):hover {
+      // border: solid 3px $c-orange;
+      opacity: 0.5;
+      cursor: pointer;
     }
   }
 
