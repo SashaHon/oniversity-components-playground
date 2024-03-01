@@ -1,11 +1,20 @@
 <script setup>
-const mock = null
+import { inject } from 'vue'
+const cartList = inject('cartList')
 </script>
 <template>
   <section class="cart">
     <h3 class="cart__title">Cart</h3>
     <ul class="cart__list">
-      <li v-if="!mock" class="cart__empty">Your cart is empty.</li>
+      <li v-if="!cartList.length" class="cart__empty">Your cart is empty.</li>
+      <li
+        v-else
+        v-for="(item, index) in cartList"
+        :key="`${item.name + index}`"
+        class="cart__list-item"
+      >
+        {{ item.name }}
+      </li>
     </ul>
   </section>
 </template>
@@ -16,40 +25,48 @@ const mock = null
   background-color: #ffff;
   border-radius: 1rem;
   box-shadow: 0 1rem 1.5rem $c-grayish-blue;
-  height: 100px;
-  width: 100px;
   top: 6rem;
   right: 6rem;
   width: 24%;
-  min-height: 24%;
-  padding: 1.5rem;
+
+  min-height: fit-content;
 
   &__title {
     font-size: $font-size-paragraph;
-    padding: 0 0 1.5rem;
   }
 
   &__list {
     border-top: solid 0.5px $c-dark-grayish-blue;
-    margin: 0 -1.5rem;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     list-style: none;
-    height: 100%;
+    height: fit-content;
+    min-height: 10rem;
+
+    background-color: blue;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+
+  &__list-item {
+    background-color: green;
+    width: 100%;
   }
 
   &__empty {
-    margin-top: -1.5rem;
     color: $c-dark-grayish-blue;
   }
 
   &__title,
   &__empty {
     font-weight: $font-w-bold;
+  }
+
+  &__title,
+  &__list {
+    padding: 1.5rem;
   }
 }
 </style>

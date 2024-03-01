@@ -28,7 +28,18 @@ const product = {
   quantityInStock: 5
 }
 const productList = ref([product, product, product, product, product])
-const cartList = ref([product, product])
+const cartList = ref([
+  product,
+  product,
+  product,
+  product,
+  product,
+  product,
+  product,
+  product,
+  product,
+  product
+])
 
 provide('addedNumber', addedNumber)
 provide('productList', productList)
