@@ -1,21 +1,20 @@
 <script setup>
+import EcomButtonPrimary from './EcomButtonPrimary.vue'
 import { inject } from 'vue'
 const cartList = inject('cartList')
 </script>
 <template>
   <section class="cart">
     <h3 class="cart__title">Cart</h3>
-    <ul class="cart__list">
-      <li v-if="!cartList.length" class="cart__empty">Your cart is empty.</li>
-      <li
-        v-else
-        v-for="(item, index) in cartList"
-        :key="`${item.name + index}`"
-        class="cart__list-item"
-      >
-        {{ item.name }}
-      </li>
-    </ul>
+    <div class="cart__container">
+      <p v-if="!cartList.length" cart="cart__empty">Your cart is empty.</p>
+      <ul v-else class="cart__list">
+        <li v-for="(item, index) in cartList" :key="`${item.name + index}`" class="cart__list-item">
+          {{ item.name }}
+        </li>
+      </ul>
+      <EcomButtonPrimary class="cart__btn" />
+    </div>
   </section>
 </template>
 
@@ -29,30 +28,36 @@ const cartList = inject('cartList')
   right: 6rem;
   width: 24%;
 
-  min-height: fit-content;
-
   &__title {
     font-size: $font-size-paragraph;
   }
 
-  &__list {
-    border-top: solid 0.5px $c-dark-grayish-blue;
+  &__container {
     display: flex;
     flex-direction: column;
+    width: 100%;
+  }
+
+  &__container {
+    border-top: solid 0.5px $c-dark-grayish-blue;
+    min-height: 10rem;
     justify-content: center;
     align-items: center;
-    list-style: none;
-    height: fit-content;
-    min-height: 10rem;
-
-    background-color: blue;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
   }
 
-  &__list-item {
-    background-color: green;
+  &__list {
     width: 100%;
+    list-style: none;
+  }
+
+  &__list-item {
+    margin-top: 1rem;
+    background-color: green;
+    &:nth-child(1) {
+      margin-top: 0;
+    }
   }
 
   &__empty {
@@ -65,8 +70,12 @@ const cartList = inject('cartList')
   }
 
   &__title,
-  &__list {
+  &__container {
     padding: 1.5rem;
+  }
+
+  &__btn {
+    margin-top: 1.5rem;
   }
 }
 </style>
