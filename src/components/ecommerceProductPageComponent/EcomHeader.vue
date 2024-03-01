@@ -1,6 +1,6 @@
 <script setup>
 import EcomNavigation from './EcomNavigation.vue'
-import EcomCart from './EcomCart.vue'
+import EcomCartIcon from './EcomCartIcon.vue'
 import EcomAccount from './EcomAccount.vue'
 </script>
 
@@ -9,7 +9,7 @@ import EcomAccount from './EcomAccount.vue'
     <p class="logo">sneakers</p>
     <EcomNavigation />
     <div class="account-container">
-      <EcomCart />
+      <EcomCartIcon />
       <EcomAccount />
     </div>
   </header>

@@ -2,6 +2,7 @@
 import MyDescription from '@/components/general/MyDescription.vue'
 import EcomHeader from '@/components/ecommerceProductPageComponent/EcomHeader.vue'
 import EcomProductPage from '@/components/ecommerceProductPageComponent/EcomProductPage.vue'
+import EcomCart from '@/components/ecommerceProductPageComponent/EcomCart.vue'
 
 import { ref, provide } from 'vue'
 
@@ -40,9 +41,10 @@ provide('product', product)
 <template>
   <div class="main-container">
     <MyDescription :routeName="`ecommerce-product-page-component`" />
-    <div class="">
+    <div class="shop">
       <EcomHeader />
       <EcomProductPage />
+      <EcomCart class="cart" />
     </div>
   </div>
 </template>
@@ -54,5 +56,13 @@ provide('product', product)
   width: 100%;
 
   font-family: $font-family;
+
+  .shop {
+    position: relative;
+  }
+
+  .cart {
+    position: absolute;
+  }
 }
 </style>
