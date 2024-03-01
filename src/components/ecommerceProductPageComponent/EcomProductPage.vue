@@ -16,6 +16,7 @@ const addToCart = () => {
     cartList.value.push(product)
   }
   addedNumber.value = 0
+  console.log('addednum:', addedNumber.value)
 }
 </script>
 <template>

@@ -1,30 +1,30 @@
 <script setup>
-import { ref, inject } from 'vue'
-const props = defineProps(['product'])
+import { inject } from 'vue'
+// const props = defineProps(['product'])
 const addedNumber = inject('addedNumber')
-const cartList = inject('cartList')
+// const cartList = inject('cartList')
+//TO DO: WHEN ADD TO CART - REMOVE TO 0 THE NUMBER ON BUTTONS
 
-const getSelectedNumberInCart = () => {
-  return cartList.value.reduce((number, cartItem) => {
-    if (props.product.id !== cartItem.id) return
-    return (number += 1)
-  }, 0)
-}
+// const getSelectedNumberInCart = () => {
+//   return cartList.value.reduce((number, cartItem) => {
+//     if (props.product.id !== cartItem.id) return
+//     return (number += 1)
+//   }, 0)
+// }
 
-const selectedNumber = ref(getSelectedNumberInCart())
+// const selectedNumber = ref(getSelectedNumberInCart())
 
 const increaseSelectedNumber = () => {
   addedNumber.value += 1
-  selectedNumber.value += 1
+  // selectedNumber.value += 1
   console.log('added number', addedNumber.value)
-  console.log('selected number', selectedNumber.value)
-  console.log('number in cart', getSelectedNumberInCart())
+  // console.log('selected number', selectedNumber.value)
+  // console.log('number in cart', getSelectedNumberInCart())
 }
 
 const decreaseSelectedNumber = () => {
-  if (selectedNumber.value > 0) {
-    selectedNumber.value -= 1
-  }
+  if (addedNumber.value <= 0) return
+  addedNumber.value -= 1
 }
 </script>
 
@@ -46,7 +46,7 @@ const decreaseSelectedNumber = () => {
         <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
       </svg>
     </button>
-    <span class="container__number">{{ selectedNumber }}</span>
+    <span class="container__number">{{ addedNumber }}</span>
     <button @click="increaseSelectedNumber" class="btn btn--plus">
       <svg
         width="12"
