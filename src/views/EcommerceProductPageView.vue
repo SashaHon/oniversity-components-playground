@@ -119,7 +119,7 @@ const productList = ref([
 ])
 const cartList = ref([])
 const totalPrice = ref('340')
-const currentProductId = ref(productList.value[3].id)
+const currentProductId = ref(productList.value[0].id)
 const productNumberInCart = ref(getProductNumberInCart())
 const isHidden = ref('true')
 

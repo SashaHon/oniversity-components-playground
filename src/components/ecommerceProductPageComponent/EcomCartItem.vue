@@ -5,6 +5,9 @@ import EcomDeleteButton from './EcomDeleteButton.vue'
 
 const productList = inject('productList')
 const cartList = inject('cartList')
+const productNumberInCart = inject('productNumberInCart')
+const getProductNumberInCart = inject('getProductNumberInCart')
+
 const props = defineProps(['productInCart'])
 
 const getProductById = (productInCart, list) => {
@@ -23,6 +26,7 @@ const productImgUrl = product.imgUrlList[1].url
 const deleteProductFromCart = () => {
   const indexInCart = getProductIndex(props.productInCart.id, cartList)
   cartList.value.splice(indexInCart, 1)
+  productNumberInCart.value = getProductNumberInCart()
 }
 </script>
 

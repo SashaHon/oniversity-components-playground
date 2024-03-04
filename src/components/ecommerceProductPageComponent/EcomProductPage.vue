@@ -2,6 +2,7 @@
 import EcomButtonChangeQuantity from './EcomButtonChangeQuantity.vue'
 import EcomButtonPrimary from './EcomButtonPrimary.vue'
 import EcomPriceSection from './EcomPriceSection.vue'
+import EcomSlide from './EcomSlide.vue'
 
 import { inject } from 'vue'
 
@@ -38,13 +39,7 @@ const addToCart = () => {
 <template>
   <article class="product">
     <section class="product__container--display">
-      <img
-        v-for="(img, index) in product.imgUrlList"
-        :key="index + 555"
-        :src="img.url"
-        alt="product photo"
-        class="product__photo"
-      />
+      <EcomSlide />
     </section>
     <section class="product__container--info">
       <p class="product__company">{{ product.company }}</p>
@@ -78,22 +73,6 @@ const addToCart = () => {
   grid-template-columns: 50% 50%;
   font-size: $font-size-paragraph;
   padding: 5% 10%;
-
-  &__photo {
-    aspect-ratio: 1 / 1;
-    width: 20%;
-    border-radius: 0.3rem;
-
-    &:first-child {
-      width: 100%;
-    }
-
-    &:not(:first-child):hover {
-      // border: solid 3px $c-orange;
-      opacity: 0.5;
-      cursor: pointer;
-    }
-  }
 
   &__company {
     text-transform: uppercase;
