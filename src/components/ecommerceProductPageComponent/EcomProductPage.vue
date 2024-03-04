@@ -1,15 +1,12 @@
 <script setup>
+import { inject } from 'vue'
 import EcomButtonChangeQuantity from './EcomButtonChangeQuantity.vue'
 import EcomButtonPrimary from './EcomButtonPrimary.vue'
-import EcomPriceSection from './EcomPriceSection.vue'
 import EcomSlide from './EcomSlide.vue'
-
-import { inject } from 'vue'
+import EcomProductInfo from './EcomProductInfo.vue'
 
 const addedNumber = inject('addedNumber')
-
 const currentProductId = inject('currentProductId')
-const productList = inject('productList')
 const cartList = inject('cartList')
 const productNumberInCart = inject('productNumberInCart')
 const getProductNumberInCart = inject('getProductNumberInCart')
@@ -18,8 +15,6 @@ const getProductById = (id, list) => {
   // !! it returns simple obj, not proxy!
   return list.value.find((el) => el.id === id.value)
 }
-
-const product = getProductById(currentProductId, productList)
 
 const addToCart = () => {
   if (!addedNumber.value) return
@@ -31,7 +26,6 @@ const addToCart = () => {
   } else if (!foundProduct) {
     cartList.value.push({ id: currentProductId.value, quantity: addedNumber.value })
   }
-  // console.log(cartList.value)
   addedNumber.value = 0
   productNumberInCart.value = getProductNumberInCart()
 }
@@ -42,15 +36,7 @@ const addToCart = () => {
       <EcomSlide />
     </section>
     <section class="product__container--info">
-      <p class="product__company">{{ product.company }}</p>
-      <h2 class="product__title">{{ product.name }}</h2>
-      <p class="product__description">{{ product.description }}</p>
-      <EcomPriceSection
-        :discountedPrice="product.discountedPrice"
-        :discountPercentage="product.discountPercentage"
-        :price="product.price"
-      />
-
+      <EcomProductInfo />
       <div class="product__btn-container">
         <EcomButtonChangeQuantity class="product__btn" />
         <EcomButtonPrimary
@@ -74,33 +60,11 @@ const addToCart = () => {
   font-size: $font-size-paragraph;
   padding: 5% 10%;
 
-  &__company {
-    text-transform: uppercase;
-    font-weight: $font-w-bold;
-  }
-
-  &__title {
-    margin-top: 1.4rem;
-    font-size: 2.6rem;
-    font-weight: $font-w-bold;
-    line-height: 2.6rem;
-  }
-
-  &__description {
-    margin-top: 1.6rem;
-    color: $c-dark-grayish-blue;
-  }
-
   &__btn-container {
     display: flex;
     height: fit-content;
     margin-top: 2rem;
     gap: 1rem;
-  }
-
-  &__company,
-  &__discount {
-    color: $c-orange;
   }
 
   &__container--display {
@@ -117,4 +81,11 @@ const addToCart = () => {
     padding: 20% 10%;
   }
 }
+
+@media (width < 65rem) and (orientation: landscape) {
+  .product {
+    font-size: 0.8rem;
+  }
+}
 </style>
+./EcomProductInfo.vue
