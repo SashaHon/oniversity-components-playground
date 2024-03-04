@@ -5,17 +5,6 @@ import EcomButtonPrimary from './EcomButtonPrimary.vue'
 
 const cartList = inject('cartList')
 const isHidden = inject('isHidden')
-
-// console.log(getProductNumberInCart())
-// const itemsObject = {}
-
-// const getNumberOfSameItems = (cartList) => {
-//   //  cartList.reduce(number, item, index) => {}, 0)
-//   //   if (!itemsObject[item.id]) {
-//   //     itemsObject[item.id] = item.id
-//   //     console.log('itemsObj:', itemsObject)
-//   //   }
-// }
 </script>
 <template>
   <section v-if="!isHidden" class="cart">
@@ -45,7 +34,7 @@ const isHidden = inject('isHidden')
   border-radius: 1rem;
   box-shadow: 0 1rem 1.5rem $c-grayish-blue;
   top: 6rem;
-  right: 6rem;
+  right: 10%;
   min-width: 24%;
   max-height: 100%;
 
