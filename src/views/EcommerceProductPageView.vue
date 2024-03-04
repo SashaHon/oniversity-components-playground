@@ -121,6 +121,7 @@ const cartList = ref([])
 const totalPrice = ref('340')
 const currentProductId = ref(productList.value[3].id)
 const productNumberInCart = ref(getProductNumberInCart())
+const isHidden = ref('true')
 
 function getProductNumberInCart() {
   return cartList.value.reduce((total, cartItem) => {
@@ -135,6 +136,7 @@ provide('totalPrice', totalPrice)
 provide('currentProductId', currentProductId)
 provide('productNumberInCart', productNumberInCart)
 provide('getProductNumberInCart', getProductNumberInCart)
+provide('isHidden', isHidden)
 </script>
 
 <template>

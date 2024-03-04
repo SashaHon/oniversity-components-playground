@@ -4,6 +4,7 @@ import EcomCartItem from './EcomCartItem.vue'
 import EcomButtonPrimary from './EcomButtonPrimary.vue'
 
 const cartList = inject('cartList')
+const isHidden = inject('isHidden')
 
 // console.log(getProductNumberInCart())
 // const itemsObject = {}
@@ -17,7 +18,7 @@ const cartList = inject('cartList')
 // }
 </script>
 <template>
-  <section class="cart">
+  <section v-if="!isHidden" class="cart">
     <h3 class="cart__title">Cart</h3>
     <div class="cart__container">
       <p v-if="!cartList.length" cart="cart__empty">Your cart is empty.</p>
