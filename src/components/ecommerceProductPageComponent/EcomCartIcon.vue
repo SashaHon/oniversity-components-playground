@@ -1,6 +1,7 @@
 <script setup>
 import { inject } from 'vue'
-const cartList = inject('cartList')
+
+const productNumberInCart = inject('productNumberInCart')
 </script>
 
 <template>
@@ -12,7 +13,7 @@ const cartList = inject('cartList')
         fill-rule="nonzero"
       />
     </svg>
-    <div class="cart__number">{{ cartList.length }}</div>
+    <div v-if="productNumberInCart > 0" class="cart__number">{{ productNumberInCart }}</div>
   </div>
 </template>
 

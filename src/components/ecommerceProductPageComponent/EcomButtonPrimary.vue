@@ -4,7 +4,7 @@ const props = defineProps(['imgUrl', 'text', 'altText'])
 
 <template>
   <button class="btn btn--add">
-    <img :src="props.imgUrl" :alt="props.altText" class="btn__cart-icon" />
+    <img v-if="props.imgUrl" :src="props.imgUrl" :alt="props.altText" class="btn__icon" />
     {{ props.text }}
   </button>
 </template>
@@ -14,7 +14,6 @@ const props = defineProps(['imgUrl', 'text', 'altText'])
 @import '@/assets/_ecommerce-product-page-utils.scss';
 .btn {
   &--add {
-    margin-left: 1rem;
     background-color: $c-orange;
     color: $c-light-grayish-blue;
     font-weight: $font-w-bold;
@@ -24,7 +23,7 @@ const props = defineProps(['imgUrl', 'text', 'altText'])
     box-shadow: 0 1rem 1rem $c-pale-orange;
     white-space: pre;
   }
-  &__cart-icon {
+  &__icon {
     width: 1rem;
     margin-right: 0.5rem;
   }

@@ -1,7 +1,20 @@
 <script setup>
-import EcomButtonPrimary from './EcomButtonPrimary.vue'
 import { inject } from 'vue'
+import EcomCartItem from './EcomCartItem.vue'
+import EcomButtonPrimary from './EcomButtonPrimary.vue'
+
 const cartList = inject('cartList')
+
+// console.log(getProductNumberInCart())
+// const itemsObject = {}
+
+// const getNumberOfSameItems = (cartList) => {
+//   //  cartList.reduce(number, item, index) => {}, 0)
+//   //   if (!itemsObject[item.id]) {
+//   //     itemsObject[item.id] = item.id
+//   //     console.log('itemsObj:', itemsObject)
+//   //   }
+// }
 </script>
 <template>
   <section class="cart">
@@ -9,11 +22,17 @@ const cartList = inject('cartList')
     <div class="cart__container">
       <p v-if="!cartList.length" cart="cart__empty">Your cart is empty.</p>
       <ul v-else class="cart__list">
-        <li v-for="(item, index) in cartList" :key="`${item.name + index}`" class="cart__list-item">
-          {{ item.name }}
+        <li
+          v-for="(product, index) in cartList"
+          :key="`${product.name + index}`"
+          class="cart__list-item"
+        >
+          <EcomCartItem :productInCart="product" />
+        </li>
+        <li>
+          <EcomButtonPrimary class="cart__btn" :text="'Checkout'" />
         </li>
       </ul>
-      <EcomButtonPrimary class="cart__btn" />
     </div>
   </section>
 </template>
@@ -26,7 +45,8 @@ const cartList = inject('cartList')
   box-shadow: 0 1rem 1.5rem $c-grayish-blue;
   top: 6rem;
   right: 6rem;
-  width: 24%;
+  min-width: 24%;
+  max-height: 100%;
 
   &__title {
     font-size: $font-size-paragraph;
@@ -54,7 +74,6 @@ const cartList = inject('cartList')
 
   &__list-item {
     margin-top: 1rem;
-    background-color: green;
     &:nth-child(1) {
       margin-top: 0;
     }

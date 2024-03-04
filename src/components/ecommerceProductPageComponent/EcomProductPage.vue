@@ -6,17 +6,33 @@ import EcomPriceSection from './EcomPriceSection.vue'
 import { inject } from 'vue'
 
 const addedNumber = inject('addedNumber')
-const product = inject('product')
+
+const currentProductId = inject('currentProductId')
+const productList = inject('productList')
 const cartList = inject('cartList')
+const productNumberInCart = inject('productNumberInCart')
+const getProductNumberInCart = inject('getProductNumberInCart')
+
+const getProductById = (id, list) => {
+  // !! it returns simple obj, not proxy!
+  return list.value.find((el) => el.id === id.value)
+}
+
+const product = getProductById(currentProductId, productList)
 
 const addToCart = () => {
   if (!addedNumber.value) return
+  //define if a product with such Id already exists in the cart or no;
+  const foundProduct = getProductById(currentProductId, cartList)
 
-  for (let i = 0; i < addedNumber.value; i++) {
-    cartList.value.push(product)
+  if (foundProduct) {
+    foundProduct.quantity += addedNumber.value
+  } else if (!foundProduct) {
+    cartList.value.push({ id: currentProductId.value, quantity: addedNumber.value })
   }
+  // console.log(cartList.value)
   addedNumber.value = 0
-  console.log('addednum:', addedNumber.value)
+  productNumberInCart.value = getProductNumberInCart()
 }
 </script>
 <template>
@@ -41,7 +57,7 @@ const addToCart = () => {
       />
 
       <div class="product__btn-container">
-        <EcomButtonChangeQuantity class="product__btn" :product="product" />
+        <EcomButtonChangeQuantity class="product__btn" />
         <EcomButtonPrimary
           @click="addToCart"
           class="product__btn"
@@ -100,6 +116,7 @@ const addToCart = () => {
     display: flex;
     height: fit-content;
     margin-top: 2rem;
+    gap: 1rem;
   }
 
   &__company,

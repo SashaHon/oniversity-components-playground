@@ -1,9 +1,7 @@
 <script setup>
 import { inject } from 'vue'
-// const props = defineProps(['product'])
+
 const addedNumber = inject('addedNumber')
-// const cartList = inject('cartList')
-//TO DO: WHEN ADD TO CART - REMOVE TO 0 THE NUMBER ON BUTTONS
 
 // const getSelectedNumberInCart = () => {
 //   return cartList.value.reduce((number, cartItem) => {
@@ -12,14 +10,9 @@ const addedNumber = inject('addedNumber')
 //   }, 0)
 // }
 
-// const selectedNumber = ref(getSelectedNumberInCart())
-
 const increaseSelectedNumber = () => {
   addedNumber.value += 1
-  // selectedNumber.value += 1
   console.log('added number', addedNumber.value)
-  // console.log('selected number', selectedNumber.value)
-  // console.log('number in cart', getSelectedNumberInCart())
 }
 
 const decreaseSelectedNumber = () => {
