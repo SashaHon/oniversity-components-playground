@@ -43,4 +43,16 @@ const props = defineProps(['discountedPrice', 'discountPercentage', 'price'])
     color: $c-orange;
   }
 }
+
+@media (width < 65rem) and (orientation: landscape) {
+  .container {
+    margin-top: 1rem;
+  }
+
+  .price {
+    &--new {
+      font-size: 1.5rem;
+    }
+  }
+}
 </style>

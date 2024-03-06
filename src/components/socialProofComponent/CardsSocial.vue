@@ -5,23 +5,23 @@ const reviews = [
   {
     reviewer: 'Colton Smith',
     isVerifiedBuyer: true,
-    quote: `“ We needed the same printed design as the one we had ordered a week prior. Not only did they
-    find the original order, but we also received it in time. Excellent! ”`,
+    quote: ` We needed the same printed design as the one we had ordered a week prior. Not only did they
+    find the original order, but we also received it in time. Excellent! `,
     imgUrl: 'src/assets/img/social-proof-component/colton.jpg'
   },
   {
     reviewer: 'Irene Roberts',
     isVerifiedBuyer: true,
-    quote: `“ Customer service is always excellent and very quick turn around. Completely delighted
-    with the simplicity of the purchase and the speed of delivery. ”`,
+    quote: ` Customer service is always excellent and very quick turn around. Completely delighted
+    with the simplicity of the purchase and the speed of delivery. `,
     imgUrl: 'src/assets/img/social-proof-component/irene.jpg'
   },
   {
     reviewer: 'Anne Wallace',
     isVerifiedBuyer: true,
-    quote: `“ Put
+    quote: ` Put
     an order with this company and can only praise them for the very high standard. Will definitely
-    use them again and recommend them to everyone!  ”`,
+    use them again and recommend them to everyone!  `,
     imgUrl: 'src/assets/img/social-proof-component/anne.jpg'
   }
 ]
@@ -36,9 +36,7 @@ const reviews = [
         <p v-if="review.isVerifiedBuyer" class="card__verified">Verified Buyer</p>
       </div>
 
-      <p class="card__quote">
-        {{ review.quote }}
-      </p>
+      <p class="card__quote">“{{ review.quote }}”</p>
     </li>
   </ul>
 </template>

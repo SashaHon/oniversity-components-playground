@@ -47,4 +47,10 @@ const product = getProductById(currentProductId, productList)
 .discount {
   color: $c-orange;
 }
+
+@media (width < 65rem) and (orientation: landscape) {
+  .title {
+    font-size: 1.6rem;
+  }
+}
 </style>

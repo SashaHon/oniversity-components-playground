@@ -62,7 +62,6 @@ const addToCart = () => {
 
   &__btn-container {
     display: flex;
-    height: fit-content;
     margin-top: 2rem;
     gap: 1rem;
   }
@@ -74,7 +73,6 @@ const addToCart = () => {
     justify-content: space-between;
     height: fit-content;
     gap: 1rem;
-    width: 100%;
   }
 
   &__container--info {
@@ -82,10 +80,26 @@ const addToCart = () => {
   }
 }
 
-@media (width < 65rem) and (orientation: landscape) {
+@media (width < 1040px) and (orientation: landscape) {
   .product {
     font-size: 0.8rem;
+    gap: 5%;
+
+    &__btn-container {
+      flex-direction: column;
+    }
+
+    &__container--info,
+    &__container--display {
+      padding: 0;
+      max-width: fit-content;
+    }
+  }
+}
+
+@media (width < 850px) and (orientation: landscape) {
+  .product {
+    padding: 1rem 2rem;
   }
 }
 </style>
-./EcomProductInfo.vue

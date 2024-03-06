@@ -3,13 +3,6 @@ import { inject } from 'vue'
 
 const addedNumber = inject('addedNumber')
 
-// const getSelectedNumberInCart = () => {
-//   return cartList.value.reduce((number, cartItem) => {
-//     if (props.product.id !== cartItem.id) return
-//     return (number += 1)
-//   }, 0)
-// }
-
 const increaseSelectedNumber = () => {
   addedNumber.value += 1
   console.log('added number', addedNumber.value)
@@ -90,6 +83,18 @@ const decreaseSelectedNumber = () => {
 
   &__number {
     font-weight: $font-w-bold;
+  }
+}
+
+@media (width < 70rem) and (orientation: landscape) {
+  .container {
+    min-width: 8rem;
+  }
+}
+
+@media (width < 65rem) and (orientation: landscape) {
+  .container {
+    min-width: 10rem;
   }
 }
 </style>

@@ -20,4 +20,10 @@
     border-radius: 100%;
   }
 }
+
+@media (width < 850px) {
+  .avatar {
+    max-height: 2rem;
+  }
+}
 </style>

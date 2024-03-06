@@ -129,6 +129,10 @@ function getProductNumberInCart() {
   }, 0)
 }
 
+// function toggleWhenBigger(width, value) {
+//   return width > value
+// }
+
 provide('addedNumber', addedNumber)
 provide('productList', productList)
 provide('cartList', cartList)
