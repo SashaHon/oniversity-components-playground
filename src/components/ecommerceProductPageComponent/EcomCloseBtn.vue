@@ -11,7 +11,6 @@
 </template>
 
 <style scoped lang="scss">
-// @import '@/assets/_ecommerce-product-page-variables.scss';
 @import '@/assets/_ecommerce-product-page-utils.scss';
 
 .btn {

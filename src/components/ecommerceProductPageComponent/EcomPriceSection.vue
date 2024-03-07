@@ -1,14 +1,18 @@
 <script setup>
-const props = defineProps(['discountedPrice', 'discountPercentage', 'price'])
+const { discountedPrice, discountPercentage, price } = defineProps([
+  'discountedPrice',
+  'discountPercentage',
+  'price'
+])
 </script>
 
 <template>
   <div class="container">
     <div class="container--price">
-      <span class="price price--new">${{ props.discountedPrice }}.00</span>
-      <span class="price__discount">{{ props.discountPercentage }}%</span>
+      <span class="price price--new">${{ discountedPrice }}.00</span>
+      <span class="price__discount">{{ discountPercentage }}%</span>
     </div>
-    <span class="price price--old">${{ props.price }}.00</span>
+    <span class="price price--old">${{ price }}.00</span>
   </div>
 </template>
 

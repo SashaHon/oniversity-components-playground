@@ -80,23 +80,6 @@ const addToCart = () => {
   }
 }
 
-// @media (width < 1040px) and (orientation: landscape) {
-//   .product {
-//     font-size: 0.8rem;
-//     gap: 5%;
-
-//     &__btn-container {
-//       flex-direction: column;
-//     }
-
-//     &__container--info,
-//     &__container--display {
-//       padding: 0;
-//       max-width: fit-content;
-//     }
-//   }
-// }
-
 @media (width < 1040px) {
   .product {
     font-size: 0.8rem;

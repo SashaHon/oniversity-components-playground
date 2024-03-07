@@ -1,11 +1,11 @@
 <script setup>
-const props = defineProps(['imgUrl', 'text', 'altText'])
+const { imgUrl, text, altText } = defineProps(['imgUrl', 'text', 'altText'])
 </script>
 
 <template>
   <button class="btn btn--add">
-    <img v-if="props.imgUrl" :src="props.imgUrl" :alt="props.altText" class="btn__icon" />
-    {{ props.text }}
+    <img v-if="imgUrl" :src="imgUrl" :alt="altText" class="btn__icon" />
+    {{ text }}
   </button>
 </template>
 

@@ -14,7 +14,7 @@ const isHidden = inject('isHidden')
       <ul v-else class="cart__list">
         <li
           v-for="(product, index) in cartList"
-          :key="`${product.name + index}`"
+          :key="`${product.name}${index}`"
           class="cart__list-item"
         >
           <EcomCartItem :productInCart="product" />

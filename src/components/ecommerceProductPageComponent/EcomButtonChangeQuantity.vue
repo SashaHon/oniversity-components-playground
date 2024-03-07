@@ -86,13 +86,7 @@ const decreaseSelectedNumber = () => {
   }
 }
 
-// @media (width < 70rem) and (orientation: landscape) {
-//   .container {
-//     min-width: 8rem;
-//   }
-// }
-
-@media (width < 1040rem) and (orientation: landscape) {
+@media (width < 1040px) and (orientation: landscape) {
   .container {
     min-width: 10rem;
   }

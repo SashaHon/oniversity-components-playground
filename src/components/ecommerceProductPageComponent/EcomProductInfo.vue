@@ -10,17 +10,20 @@ const getProductById = (id, list) => {
   return list.value.find((el) => el.id === id.value)
 }
 
-const product = getProductById(currentProductId, productList)
+const { company, name, description, discountedPrice, discountPercentage, price } = getProductById(
+  currentProductId,
+  productList
+)
 </script>
 
 <template>
-  <p class="company">{{ product.company }}</p>
-  <h2 class="title">{{ product.name }}</h2>
-  <p class="description">{{ product.description }}</p>
+  <p class="company">{{ company }}</p>
+  <h2 class="title">{{ name }}</h2>
+  <p class="description">{{ description }}</p>
   <EcomPriceSection
-    :discountedPrice="product.discountedPrice"
-    :discountPercentage="product.discountPercentage"
-    :price="product.price"
+    :discountedPrice="discountedPrice"
+    :discountPercentage="discountPercentage"
+    :price="price"
   />
 </template>
 

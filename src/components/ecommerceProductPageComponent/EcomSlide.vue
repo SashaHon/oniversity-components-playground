@@ -1,35 +1,3 @@
-<template>
-  <swiper
-    :style="{
-      '--swiper-navigation-color': '#fff',
-      '--swiper-pagination-color': '#fff'
-    }"
-    :spaceBetween="10"
-    :navigation="true"
-    :thumbs="{ swiper: thumbsSwiper }"
-    :modules="modules"
-    class="mySwiper2"
-  >
-    <swiper-slide v-for="(img, index) in product.imgUrlList" :key="index + 555"
-      ><img :src="img.url" alt="product photo" class="photo"
-    /></swiper-slide>
-  </swiper>
-
-  <swiper
-    @swiper="setThumbsSwiper"
-    :spaceBetween="10"
-    :slidesPerView="4"
-    :freeMode="true"
-    :watchSlidesProgress="true"
-    :modules="modules"
-    class="mySwiper"
-  >
-    <swiper-slide v-for="(img, index) in product.imgUrlList" :key="index + 666"
-      ><img :src="img.url" alt="product photo" class="photo"
-    /></swiper-slide>
-  </swiper>
-</template>
-
 <script setup>
 import { ref, inject } from 'vue'
 // Import Swiper Vue.js components
@@ -49,7 +17,7 @@ const getProductById = (id, list) => {
   return list.value.find((el) => el.id === id.value)
 }
 
-const product = getProductById(currentProductId, productList)
+const { imgUrlList } = getProductById(currentProductId, productList)
 
 const thumbsSwiper = ref(null)
 
@@ -59,6 +27,38 @@ const setThumbsSwiper = (swiper) => {
 
 const modules = [FreeMode, Navigation, Thumbs]
 </script>
+
+<template>
+  <swiper
+    :style="{
+      '--swiper-navigation-color': '#fff',
+      '--swiper-pagination-color': '#fff'
+    }"
+    :spaceBetween="10"
+    :navigation="true"
+    :thumbs="{ swiper: thumbsSwiper }"
+    :modules="modules"
+    class="mySwiper2"
+  >
+    <swiper-slide v-for="({ url }, index) in imgUrlList" :key="`${index}${5555577777}`"
+      ><img :src="url" alt="product photo" class="photo"
+    /></swiper-slide>
+  </swiper>
+
+  <swiper
+    @swiper="setThumbsSwiper"
+    :spaceBetween="10"
+    :slidesPerView="4"
+    :freeMode="true"
+    :watchSlidesProgress="true"
+    :modules="modules"
+    class="mySwiper"
+  >
+    <swiper-slide v-for="({ url }, index) in imgUrlList" :key="index + 666"
+      ><img :src="url" alt="product photo" class="photo"
+    /></swiper-slide>
+  </swiper>
+</template>
 
 <style scoped lang="scss">
 @import '@/assets/_ecommerce-product-page-variables.scss';

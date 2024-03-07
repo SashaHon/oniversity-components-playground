@@ -20,7 +20,7 @@ const navList = [
     </li>
     <li
       v-for="({ page, url }, index) in navList"
-      :key="`${page + index}`"
+      :key="`${page}${index}`"
       class="list__item"
       @click="toggleMenu"
     >

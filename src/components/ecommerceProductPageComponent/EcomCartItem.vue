@@ -8,23 +8,22 @@ const cartList = inject('cartList')
 const productNumberInCart = inject('productNumberInCart')
 const getProductNumberInCart = inject('getProductNumberInCart')
 
-const props = defineProps(['productInCart'])
+const { productInCart } = defineProps(['productInCart'])
 
-const getProductById = (productInCart, list) => {
+const getProductById = (product, list) => {
   // !! it returns simple obj, not proxy!
-  // console.log(id, list)
-  return list.value.find((el) => el.id === productInCart.id)
+  return list.value.find((el) => el.id === product.id)
 }
 
 const getProductIndex = (productId, list) => {
   return list.value.findIndex((el) => el.id === productId)
 }
 
-const product = getProductById(props.productInCart, productList)
+const product = getProductById(productInCart, productList)
 const productImgUrl = product.imgUrlList[1].url
 
 const deleteProductFromCart = () => {
-  const indexInCart = getProductIndex(props.productInCart.id, cartList)
+  const indexInCart = getProductIndex(productInCart.id, cartList)
   cartList.value.splice(indexInCart, 1)
   productNumberInCart.value = getProductNumberInCart()
 }
@@ -36,9 +35,9 @@ const deleteProductFromCart = () => {
     <div class="product__info">
       <h4 class="product__title">{{ product.name }}</h4>
       <p class="product__quantity">
-        {{ `$${product.discountedPrice}.00 x ${props.productInCart.quantity}` }}
+        {{ `$${product.discountedPrice}.00 x ${productInCart.quantity}` }}
         <span class="product__price">
-          ${{ product.discountedPrice * props.productInCart.quantity }}.00
+          ${{ product.discountedPrice * productInCart.quantity }}.00
         </span>
       </p>
     </div>
