@@ -37,6 +37,7 @@ const isHidden = inject('isHidden')
   right: 10%;
   min-width: 24%;
   max-height: 100%;
+  z-index: 2;
 
   &__title {
     font-size: $font-size-paragraph;
@@ -85,6 +86,13 @@ const isHidden = inject('isHidden')
 
   &__btn {
     margin-top: 1.5rem;
+  }
+}
+
+@media (width < 500px) and (orientation: portrait) {
+  .cart {
+    right: auto;
+    top: 6rem;
   }
 }
 </style>

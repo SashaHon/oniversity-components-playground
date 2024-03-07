@@ -15,13 +15,13 @@ const navList = [
 
 <template>
   <menu class="list">
-    <li class="list__item list__item--black-hover list__btn">
+    <li class="list__item list__btn">
       <EcomCloseBtn @click="toggleMenu" />
     </li>
     <li
       v-for="({ page, url }, index) in navList"
       :key="`${page + index}`"
-      class="list__item list__item--black-hover"
+      class="list__item"
       @click="toggleMenu"
     >
       <a :href="url"> {{ page }}</a>
@@ -41,14 +41,11 @@ const navList = [
   &__item {
     line-height: 7rem;
 
-    &:nth-child(6) {
-      width: 40%;
-    }
     a {
       color: $c-dark-grayish-blue;
     }
 
-    &--black-hover a:hover {
+    a:hover {
       color: $c-black;
       line-height: calc(7rem - 8px); //moving border-bottom to the bottom of listigation;
       transform: translateY(

@@ -8,6 +8,8 @@ const showMenu = ref(null)
 const windowWidth = ref(window.innerWidth)
 
 const toggleMenu = () => {
+  if (windowWidth.value > 850) return
+
   showMenu.value = !showMenu.value
 }
 const handleResize = () => {
@@ -86,7 +88,7 @@ header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      gap: 3rem;
       flex: 1;
     }
   }
