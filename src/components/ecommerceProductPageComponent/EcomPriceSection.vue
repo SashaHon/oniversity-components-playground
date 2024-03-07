@@ -44,7 +44,7 @@ const props = defineProps(['discountedPrice', 'discountPercentage', 'price'])
   }
 }
 
-@media (width < 65rem) and (orientation: landscape) {
+@media (width < 1040rem) and (orientation: landscape) {
   .container {
     margin-top: 1rem;
   }
@@ -53,6 +53,12 @@ const props = defineProps(['discountedPrice', 'discountPercentage', 'price'])
     &--new {
       font-size: 1.5rem;
     }
+  }
+}
+
+@media (width < 500px) and (orientation: portrait) {
+  .container {
+    margin-top: 1rem;
   }
 }
 </style>

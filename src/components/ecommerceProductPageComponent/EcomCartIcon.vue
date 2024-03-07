@@ -53,4 +53,12 @@ const showCart = () => {
     border-radius: 1rem;
   }
 }
+
+@media (width < 500px) and (orientation: portrait) {
+  .cart {
+    &__icon {
+      position: initial;
+    }
+  }
+}
 </style>

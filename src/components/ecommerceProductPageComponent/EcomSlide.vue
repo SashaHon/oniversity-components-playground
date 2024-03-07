@@ -1,3 +1,35 @@
+<template>
+  <swiper
+    :style="{
+      '--swiper-navigation-color': '#fff',
+      '--swiper-pagination-color': '#fff'
+    }"
+    :spaceBetween="10"
+    :navigation="true"
+    :thumbs="{ swiper: thumbsSwiper }"
+    :modules="modules"
+    class="mySwiper2"
+  >
+    <swiper-slide v-for="(img, index) in product.imgUrlList" :key="index + 555"
+      ><img :src="img.url" alt="product photo" class="photo"
+    /></swiper-slide>
+  </swiper>
+
+  <swiper
+    @swiper="setThumbsSwiper"
+    :spaceBetween="10"
+    :slidesPerView="4"
+    :freeMode="true"
+    :watchSlidesProgress="true"
+    :modules="modules"
+    class="mySwiper"
+  >
+    <swiper-slide v-for="(img, index) in product.imgUrlList" :key="index + 666"
+      ><img :src="img.url" alt="product photo" class="photo"
+    /></swiper-slide>
+  </swiper>
+</template>
+
 <script setup>
 import { ref, inject } from 'vue'
 // Import Swiper Vue.js components
@@ -61,36 +93,7 @@ const modules = [FreeMode, Navigation, Thumbs]
     border: 4px solid orange;
   }
 }
+
+@media (width < 500px) and (orientation: portrait) {
+}
 </style>
-
-<template>
-  <swiper
-    :style="{
-      '--swiper-navigation-color': '#fff',
-      '--swiper-pagination-color': '#fff'
-    }"
-    :spaceBetween="10"
-    :navigation="true"
-    :thumbs="{ swiper: thumbsSwiper }"
-    :modules="modules"
-    class="mySwiper2"
-  >
-    <swiper-slide v-for="(img, index) in product.imgUrlList" :key="index + 555"
-      ><img :src="img.url" alt="product photo" class="photo"
-    /></swiper-slide>
-  </swiper>
-
-  <swiper
-    @swiper="setThumbsSwiper"
-    :spaceBetween="10"
-    :slidesPerView="4"
-    :freeMode="true"
-    :watchSlidesProgress="true"
-    :modules="modules"
-    class="mySwiper"
-  >
-    <swiper-slide v-for="(img, index) in product.imgUrlList" :key="index + 666"
-      ><img :src="img.url" alt="product photo" class="photo"
-    /></swiper-slide>
-  </swiper>
-</template>

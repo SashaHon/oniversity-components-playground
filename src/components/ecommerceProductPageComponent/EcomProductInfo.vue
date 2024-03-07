@@ -48,9 +48,21 @@ const product = getProductById(currentProductId, productList)
   color: $c-orange;
 }
 
-@media (width < 65rem) and (orientation: landscape) {
+@media (width < 1040px) and (orientation: landscape) {
   .title {
     font-size: 1.6rem;
+  }
+}
+
+@media (width < 500px) and (orientation: portrait) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .company,
+  .title,
+  .description {
+    margin-top: 1rem;
   }
 }
 </style>

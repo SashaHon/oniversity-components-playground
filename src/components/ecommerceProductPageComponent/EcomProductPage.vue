@@ -80,7 +80,24 @@ const addToCart = () => {
   }
 }
 
-@media (width < 1040px) and (orientation: landscape) {
+// @media (width < 1040px) and (orientation: landscape) {
+//   .product {
+//     font-size: 0.8rem;
+//     gap: 5%;
+
+//     &__btn-container {
+//       flex-direction: column;
+//     }
+
+//     &__container--info,
+//     &__container--display {
+//       padding: 0;
+//       max-width: fit-content;
+//     }
+//   }
+// }
+
+@media (width < 1040px) {
   .product {
     font-size: 0.8rem;
     gap: 5%;
@@ -97,9 +114,20 @@ const addToCart = () => {
   }
 }
 
-@media (width < 850px) and (orientation: landscape) {
+@media (width < 850px) and (orientation: landscape), (width < 850px) and (orientation: portrait) {
   .product {
     padding: 1rem 2rem;
+  }
+}
+
+@media (width < 500px) and (orientation: portrait) {
+  .product {
+    display: block;
+    padding: 0 1rem 2rem;
+
+    &__btn-container {
+      margin-top: 1rem;
+    }
   }
 }
 </style>
