@@ -94,6 +94,11 @@ const navList = [
         }
       }
     }
+
+    &__btn {
+      width: fit-content;
+      align-self: flex-start;
+    }
   }
 }
 </style>
