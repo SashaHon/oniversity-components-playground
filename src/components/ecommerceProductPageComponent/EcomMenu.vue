@@ -68,6 +68,7 @@ const navList = [
   .list {
     flex-direction: column;
     position: fixed;
+    left: 0;
     z-index: 2;
     background-color: #ffff;
     width: 70%;

@@ -90,6 +90,8 @@ header {
       justify-content: space-between;
       gap: 3rem;
       flex: 1;
+      //because image and svg have different height, center this container along with other items in header
+      transform: translateY(4px);
     }
   }
   .styled-line {
@@ -106,7 +108,6 @@ header {
 
 @media (width < 850px) {
   header {
-    // padding: 0 1rem;
     .navigation {
       .logo {
         font-size: 1.6rem;
@@ -114,8 +115,39 @@ header {
       .burger {
         display: block;
       }
+    }
+  }
+}
+
+@media (width < 850px) {
+  header {
+    .navigation {
+      .logo {
+        font-size: 1.6rem;
+      }
+      .burger {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (width < 768px) {
+  header {
+    padding: 0 1rem;
+    .navigation {
       .account-container {
-        // margin-right: 2rem;
+        gap: 2rem;
+      }
+    }
+  }
+}
+
+@media (width < 500px) {
+  header {
+    .navigation {
+      .account-container {
+        gap: 1rem;
       }
     }
   }
