@@ -123,7 +123,11 @@ const addToCart = () => {
 @media (width < 500px) and (orientation: portrait) {
   .product {
     display: block;
-    padding: 0 1rem 2rem;
+    padding: 0 0 2rem;
+
+    &__container--info {
+      padding: 0 1rem;
+    }
 
     &__btn-container {
       margin-top: 1rem;

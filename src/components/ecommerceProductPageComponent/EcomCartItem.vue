@@ -75,4 +75,12 @@ const deleteProductFromCart = () => {
     color: $c-dark-grayish-blue;
   }
 }
+
+@media (width < 320px) and (orientation: portrait) {
+  .product {
+    &__img {
+      height: 2rem;
+    }
+  }
+}
 </style>

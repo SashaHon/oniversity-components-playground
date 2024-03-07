@@ -32,10 +32,10 @@ const isHidden = inject('isHidden')
 .cart {
   background-color: #ffff;
   border-radius: 1rem;
-  box-shadow: 0 1rem 1.5rem $c-grayish-blue;
+  box-shadow: 0 1rem 1.5rem hsl(0, 0, 0, 0.2);
   top: 6rem;
-  right: 10%;
-  min-width: 24%;
+  right: 2rem;
+  min-width: 20rem;
   max-height: 100%;
   z-index: 2;
 
@@ -91,8 +91,41 @@ const isHidden = inject('isHidden')
 
 @media (width < 500px) and (orientation: portrait) {
   .cart {
+    left: 50%;
     right: auto;
-    top: 6rem;
+    transform: translateX(-50%);
+    top: 8rem;
+    width: 90%;
+
+    &__title,
+    &__container {
+      font-size: 0.8rem;
+    }
+
+    &__container {
+      height: 15rem;
+    }
+  }
+}
+
+@media (width < 375px) and (orientation: portrait) {
+  .cart {
+    min-width: 10rem;
+    &__container {
+      height: 12rem;
+    }
+  }
+}
+
+@media (width < 320px) and (orientation: portrait) {
+  .cart {
+    &__container {
+      height: 8rem;
+    }
+    &__title,
+    &__container {
+      font-size: 0.7rem;
+    }
   }
 }
 </style>
