@@ -27,11 +27,17 @@ const router = createRouter({
       path: '/social-proof-component',
       name: 'social-proof-component',
       component: () => import('@/views/SocialProofComponentView.vue')
+
     },
     {
       path: '/design/:designName',
       name: 'design',
       component: () => import('@/views/DesignView.vue')
+    },
+    {
+      path: '/ecommerce-product-page-component',
+      name: 'ecommerce-product-page-component',
+      component: () => import('@/views/EcommerceProductPageView.vue')
     },
     {
       path: '/empty-page',
