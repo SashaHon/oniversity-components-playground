@@ -5,7 +5,9 @@ import { RouterLink } from 'vue-router'
 const components = ref([
   { routeName: '3-card-component', fullName: '3 Card component' },
   { routeName: 'order-summary-component', fullName: 'Order Summary component' },
-  { routeName: 'single-price-component', fullName: 'Single Price component' }
+  { routeName: 'single-price-component', fullName: 'Single Price component' },
+  { routeName: 'social-proof-component', fullName: 'Social Proof component' },
+  { routeName: 'ecommerce-product-page-component', fullName: 'Ecommerce Product Page component' }
 ])
 </script>
 
@@ -18,9 +20,9 @@ const components = ref([
         >
       </li>
     </ul>
-    <RouterLink :to="{ name: 'emptyPage' }" class="router"
-      >Task 4..5 [under construction 🚧]</RouterLink
-    >
+    <!-- <RouterLink :to="{ name: 'emptyPage' }" class="router"
+      > empty page  🚧 </RouterLink
+    > -->
   </nav>
 </template>
 
