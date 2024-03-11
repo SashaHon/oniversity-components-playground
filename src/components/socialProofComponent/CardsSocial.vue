@@ -7,7 +7,6 @@ const reviews = [
     isVerifiedBuyer: true,
     quote: ` We needed the same printed design as the one we had ordered a week prior. Not only did they
     find the original order, but we also received it in time. Excellent! `,
-    imgUrl: 'src/assets/img/social-proof-component/colton.jpg'
   },
   {
     reviewer: 'Irene Roberts',

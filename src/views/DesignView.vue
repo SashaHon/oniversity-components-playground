@@ -40,7 +40,6 @@ const currentDesigns = designs.filter((el) => el.url)
   display: flex;
   flex-direction: column;
   align-items: center;
-
   h2 {
     margin-top: 4rem;
   }
